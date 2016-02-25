@@ -1,0 +1,29 @@
+[user]
+    name = Nikola Kantar
+    email = nkantar@gmail.com
+[github]
+    user = nkantar
+[color]
+    ui = true
+[push]
+    default = matching
+[alias]
+    a = add
+    ci = commit
+    co = checkout
+    pl = pull
+    plo = pull origin
+    plom = pull origin master
+    ps = push
+    pso = push origin
+    psom = push origin master
+    br = branch
+    st = status
+    ss = status --short
+    stu = status -uno
+    ssu = status --short -uno
+    di = diff
+    l = log
+    lg = log --oneline --graph --decorate
+    unstage = reset HEAD
+
