@@ -89,6 +89,8 @@ if [[ -a ~/.env_vars ]] ; then
     source ~/.env_vars
 fi
 
+export EDITOR=/usr/local/bin/nvim
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
