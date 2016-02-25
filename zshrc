@@ -85,12 +85,15 @@ if [[ -a ~/.aliases ]] ; then
     source ~/.aliases
 fi
 
+# ~/.env_vars is a local file on each environment.
+# Thou shalt not version this, as it contains secrets, such as GitHub API tokens.
 if [[ -a ~/.env_vars ]] ; then
     source ~/.env_vars
 fi
 
 export EDITOR=/usr/local/bin/nvim
 
+# There may be a better way of dealing with this than just having it appended on all environments.
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
