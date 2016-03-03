@@ -6,7 +6,7 @@
 [color]
     ui = true
 [push]
-    default = matching
+    default = simple
 [alias]
     a = add
     ci = commit
