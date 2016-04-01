@@ -47,11 +47,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'easymotion/vim-easymotion'
 
-"Plugin 'altercation/vim-colors-solarized'
+Plugin 'SirVer/ultisnips'
 
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
 Plugin 'blindFS/vim-taskwarrior'
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -106,3 +103,8 @@ set colorcolumn=100
 set clipboard=unnamed
 
 ":colo nofrils-dark
+
+let g:UltiSnipsExpandTrigger='<c-\>'
+let g:UltiSnipsJumpForwardTrigger='<c-b>'
+let g:UltiSnipsJumpBackwardTrigger='<c-z>'
+
