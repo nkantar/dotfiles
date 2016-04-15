@@ -91,6 +91,7 @@ if [[ -a ~/.env_vars ]] ; then
     source ~/.env_vars
 fi
 
+eval $(docker-machine env default)
 export EDITOR=/usr/local/bin/nvim
 
 # There may be a better way of dealing with this than just having it appended on all environments.
