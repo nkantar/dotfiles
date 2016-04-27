@@ -52,7 +52,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'blindFS/vim-taskwarrior'
 Plugin 'terryma/vim-multiple-cursors'
 
-Plugin 'ajh17/Spacegray.vim'
+Plugin 'nkantar/Spacegray.vim'
 
 Plugin 'robertmeta/nofrils'
 
