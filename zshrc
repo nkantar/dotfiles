@@ -5,8 +5,6 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="dieter"
 ZSH_THEME="ys"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -92,7 +90,7 @@ if [[ -a ~/.env_vars ]] ; then
 fi
 
 eval $(docker-machine env default)
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=/usr/local/bin/vim
 
 export HOMEBREW_NO_ANALYTICS=1
 
