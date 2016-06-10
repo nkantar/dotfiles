@@ -119,3 +119,17 @@ set backspace=2
 set wildignore+=*.pyc
 
 set hlsearch
+
+set relativenumber
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+inoremap <esc> <nop>
+set cursorline
+
+
+
+
