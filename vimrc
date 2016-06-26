@@ -59,6 +59,8 @@ Plugin 'robertmeta/nofrils'
 
 Plugin 'ryanss/vim-hackernews'
 
+Plugin 'dracula/vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -92,8 +94,9 @@ set splitright
 " Airline
 let g:airline_theme='base16_grayscale'
 
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 colorscheme spacegray
+colorscheme dracula
 
 let g:gitgutter_sign_column_always = 1
 
@@ -130,6 +133,8 @@ noremap <Right> <NOP>
 inoremap <esc> <nop>
 set cursorline
 
+set backupskip=/tmp/*,/private/tmp/*
 
+set background=dark
 
 

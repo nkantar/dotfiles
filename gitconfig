@@ -11,6 +11,7 @@
     a = add
     ci = commit
     co = checkout
+    cv = commit --verbose
     pl = pull
     plo = pull origin
     plom = pull origin master
@@ -27,3 +28,5 @@
     lg = log --oneline --graph --decorate
     unstage = reset HEAD
 
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
