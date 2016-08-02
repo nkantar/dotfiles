@@ -16,6 +16,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'nkantar/ultisnips'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dracula/vim'
+Plugin 'mtth/scratch.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'nkantar/GHT.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required

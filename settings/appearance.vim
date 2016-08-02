@@ -11,4 +11,7 @@ set cursorline
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_max_signs = 10000
 
-set statusline=%F\ %y\ %m\ %=%v\,%l/%L(%P)
+set laststatus=2
+set statusline=%F\ %y\ %m%=%v\,%l\/%L
+hi StatusLine ctermfg=248
+hi StatusLineNC ctermfg=242
