@@ -18,6 +18,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dracula/vim'
 Plugin 'mtth/scratch.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'nkantar/GHT.vim'
+Plugin 'junegunn/goyo.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
