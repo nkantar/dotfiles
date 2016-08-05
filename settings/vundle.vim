@@ -2,24 +2,28 @@ filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/bundle')
+
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
+
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dracula/vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'junegunn/goyo.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'mileszs/ack.vim'
+Plugin 'mtth/scratch.vim'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'mileszs/ack.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'nkantar/ultisnips'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'dracula/vim'
-Plugin 'mtth/scratch.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'elixir-lang/vim-elixir'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
+
 Plugin 'nkantar/GHT.vim'
-Plugin 'junegunn/goyo.vim'
+Plugin 'nkantar/ultisnips'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
