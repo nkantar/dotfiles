@@ -25,7 +25,7 @@
     ssu = status --short -uno
     di = diff
     l = log
-    lg = log --oneline --graph --decorate
+    lg = log --pretty=\"%h  %<(16)%C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
     unstage = reset HEAD
 
 [core]
