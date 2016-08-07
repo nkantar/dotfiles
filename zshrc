@@ -79,13 +79,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [[ -a ~/.aliases ]] ; then
+if [[ -a ~/.aliases.sh ]] ; then
     source ~/.aliases.sh
 fi
 
 # ~/.env_vars is a local file on each environment.
 # Thou shalt not version this, as it contains secrets, such as GitHub API tokens.
-if [[ -a ~/.env_vars ]] ; then
+if [[ -a ~/.env_vars.sh ]] ; then
     source ~/.env_vars.sh
 fi
 
