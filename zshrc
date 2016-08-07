@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
+ZSH_THEME="ysnk"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -80,16 +80,16 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [[ -a ~/.aliases ]] ; then
-    source ~/.aliases
+    source ~/.aliases.sh
 fi
 
 # ~/.env_vars is a local file on each environment.
 # Thou shalt not version this, as it contains secrets, such as GitHub API tokens.
 if [[ -a ~/.env_vars ]] ; then
-    source ~/.env_vars
+    source ~/.env_vars.sh
 fi
 
-eval $(docker-machine env default)
+#eval $(docker-machine env default)
 export EDITOR=/usr/local/bin/vim
 
 export HOMEBREW_NO_ANALYTICS=1
