@@ -26,6 +26,7 @@
     di = diff
     l = log
     lg = log --pretty=\"%h  %<(16)%C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
+    ;lg = log --pretty=\"%h  %<($(git log --pretty="%an" | sort -ug | wc -c))%C(yellow)%an%Creset %Cblue%ar%Creset  %s\"
     unstage = reset HEAD
 
 [core]
