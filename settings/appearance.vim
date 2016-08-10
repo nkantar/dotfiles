@@ -28,10 +28,13 @@ set statusline+=\
 set statusline+=%=  " right-align from now on
 
 set statusline+=%v  " column number
-set statusline+=\,
+set statusline+=\:
 set statusline+=%l  " row number
 set statusline+=\/
 set statusline+=%L  " row total
+set statusline+=\ 
+set statusline+=\\
+set statusline+=%{winnr()}
 
 hi StatusLine ctermfg=248 ctermbg=236
 hi StatusLineNC ctermfg=242 ctermbg=236
