@@ -24,3 +24,7 @@ let g:UltiSnipsJumpForwardTrigger='<c-b>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
 let g:ctrlp_custom_ignore = 'venv'
+
+set completeopt-=preview
+
+set shell=zsh\ -l
