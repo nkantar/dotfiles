@@ -29,5 +29,11 @@
     ;lg = log --pretty=\"%h  %<($(git log --pretty="%an" | sort -ug | wc -c))%C(yellow)%an%Creset %Cblue%ar%Creset  %s\"
     unstage = reset HEAD
 
+    ru = remote update
+    c = commit --verbose
+    amend = commit --amend
+    l = log --pretty=\"%h  %<(16)%C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
+
+
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
