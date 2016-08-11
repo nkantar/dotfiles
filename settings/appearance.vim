@@ -13,7 +13,7 @@ let g:gitgutter_max_signs = 10000
 
 set laststatus=2
 
-hi User1 ctermfg=242 ctermbg=236 cterm=bold
+hi User1 ctermfg=240 ctermbg=236 cterm=bold
 
 set statusline=
 
@@ -37,4 +37,4 @@ set statusline+=\\
 set statusline+=%{winnr()}
 
 hi StatusLine ctermfg=248 ctermbg=236
-hi StatusLineNC ctermfg=242 ctermbg=236
+hi StatusLineNC ctermfg=240 ctermbg=236
