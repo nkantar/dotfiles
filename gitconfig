@@ -1,8 +1,13 @@
 [user]
     name = Nikola Kantar
-    email = nkantar@gmail.com
 [github]
     user = nkantar
+[core]
+    pager = diff-so-fancy | less --tabs=4 -RFX
+[commit]
+    gpgsign = true
+[include]
+    path = ~/.gitconfig-local
 [color]
     ui = true
 [push]
@@ -34,6 +39,3 @@
     amend = commit --amend
     l = log --pretty=\"%h  %<(16)%C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
 
-
-[core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
