@@ -1,0 +1,5 @@
+source ~/.vim/vundle.vim
+source ~/.vim/appearance.vim
+source ~/.vim/behavior.vim
+source ~/.vim/keymappings.vim
+source ~/.vim/filetypes.vim

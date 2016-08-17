@@ -33,7 +33,7 @@ set statusline+=%l  " row number
 set statusline+=\/
 set statusline+=%L  " row total
 set statusline+=\ 
-set statusline+=\\
+set statusline+=_
 set statusline+=%{winnr()}
 
 hi StatusLine ctermfg=248 ctermbg=236
