@@ -4,9 +4,7 @@ nnoremap <Leader>s :source ~/.vim/vimrc<CR>
 " saving and quitting are very common commands
 nnoremap <Leader>ww :write<CR>
 nnoremap <Leader>qq :quit<CR>
-nnoremap <Leader>wqq :write \| quit<CR>
 nnoremap <Leader>qa :quitall<CR>
-nnoremap <Leader>wqa :write \| quitall<CR>
 
 " <C-c> over Esc
 inoremap <Esc> <Nop>
