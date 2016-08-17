@@ -1,3 +1,5 @@
-nvim/bundle
+vim/bundle
 .DS_Store
 iterm2/
+gitconfig-local
+.netrwhist
