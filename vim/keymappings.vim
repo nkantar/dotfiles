@@ -6,6 +6,8 @@ nnoremap <Leader>ww :write<CR>
 nnoremap <Leader>qq :quit<CR>
 nnoremap <Leader>qa :quitall<CR>
 
+nnoremap <Leader>p :set invpaste paste?<CR>
+
 " <C-c> over Esc
 inoremap <Esc> <Nop>
 
