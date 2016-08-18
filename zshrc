@@ -92,9 +92,20 @@ fi
 #eval $(docker-machine env default)
 export EDITOR=/usr/local/bin/vim
 
+export GPG_TTY=$(tty)
+eval $(gpg-agent --daemon --allow-preset-passphrase)
+
 export HOMEBREW_NO_ANALYTICS=1
 
 # There may be a better way of dealing with this than just having it appended on all environments.
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
+if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
+  export GPG_AGENT_INFO
+else
+  eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
+fi
+
 
