@@ -7,6 +7,7 @@ nnoremap <Leader>qq :quit<CR>
 nnoremap <Leader>qa :quitall<CR>
 
 nnoremap <Leader>p :set invpaste paste?<CR>
+nnoremap <Leader>; :
 
 " <C-c> over Esc
 inoremap <Esc> <Nop>
