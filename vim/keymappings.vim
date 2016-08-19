@@ -12,6 +12,8 @@ nnoremap <Leader>; :
 nnoremap <Leader>vs :vsplit<CR>
 nnoremap <Leader>hs :split<CR>
 
+nnoremap <Leader>mark :set syntax=markdown<CR>
+
 " <C-c> over Esc
 inoremap <Esc> <Nop>
 
