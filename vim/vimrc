@@ -3,3 +3,5 @@ source ~/.vim/appearance.vim
 source ~/.vim/behavior.vim
 source ~/.vim/keymappings.vim
 source ~/.vim/filetypes.vim
+
+source ~/.vim/google.vim " TODO: integrate this better
