@@ -8,6 +8,8 @@ nnoremap <Leader>qa :quitall<CR>
 
 nnoremap <Leader>p :set invpaste paste?<CR>
 nnoremap <Leader>; :
+nnoremap <Leader>vs :vsplit<CR>
+nnoremap <Leader>hs :split<CR>
 
 " <C-c> over Esc
 inoremap <Esc> <Nop>
