@@ -11,6 +11,15 @@ set cursorline
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_max_signs = 10000
 
+function! PasteForStatusline()
+    let paste_status = &paste
+    if paste_status == 1
+        return " [paste] "
+    else
+        return ""
+    endif
+endfunction
+
 set laststatus=2
 
 hi User1 ctermfg=240 ctermbg=236 cterm=bold
@@ -27,6 +36,10 @@ set statusline+=\
 
 set statusline+=%=  " right-align from now on
 
+set statusline+=%{PasteForStatusline()}
+
+set statusline+=\[%{mode()}\]
+set statusline+=\ 
 set statusline+=%v  " column number
 set statusline+=\:
 set statusline+=%l  " row number
