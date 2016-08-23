@@ -17,11 +17,11 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
+Plug 'SirVer/ultisnips'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-git'
 Plug 'Valloric/YouCompleteMe'
 
 Plug 'nkantar/GHT.vim'
-Plug 'nkantar/ultisnips'
 
 call plug#end()
