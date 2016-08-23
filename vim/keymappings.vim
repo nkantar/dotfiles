@@ -12,6 +12,9 @@ nnoremap <Leader>; :
 nnoremap <Leader>vs :vsplit<CR>
 nnoremap <Leader>hs :split<CR>
 
+nnoremap <Leader>vn :vnew<CR>
+nnoremap <Leader>hn :new<CR>
+
 nnoremap <Leader>mark :set syntax=markdown<CR>
 
 " <C-c> over Esc
@@ -24,10 +27,11 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " speaking of hjkl, movce cursor by display lines
-noremap <buffer> <silent> k gk
-noremap <buffer> <silent> j gj
-noremap <buffer> <silent> 0 g0
-noremap <buffer> <silent> $ g$
+" NOTE: removed mapping since it made lines numbers useless
+"noremap <buffer> <silent> k gk
+"noremap <buffer> <silent> j gj
+"noremap <buffer> <silent> 0 g0
+"noremap <buffer> <silent> $ g$
 
 " better movement between splits
 nnoremap <C-j> <C-w>j
