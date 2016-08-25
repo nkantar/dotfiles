@@ -47,4 +47,4 @@ map <Space><Space> <Leader><Leader>
 " find TODO comments
 noremap <Leader>r /TODO\:\ Nik\ \-\ remove<CR>
 noremap <Leader>n /TODO\:\ Nik<CR>
-noremap <Leader>l :nohlsearch<CR>
+noremap <Leader>l :noh<CR>

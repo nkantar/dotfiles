@@ -3,7 +3,6 @@ syntax on
 set number
 colorscheme dracula
 set background=dark
-set hlsearch
 set relativenumber
 set colorcolumn=80,100
 "let &colorcolumn=join(range(81,999),",")
@@ -47,7 +46,6 @@ set statusline+=%l  " row number
 set statusline+=\/
 set statusline+=%L  " row total
 set statusline+=\ 
-set statusline+=_
 set statusline+=%{winnr()}
 
 hi StatusLine ctermfg=248 ctermbg=236
@@ -55,3 +53,4 @@ hi StatusLineNC ctermfg=240 ctermbg=236
 
 colorscheme nofrils-dark
 
+syn region Comment start=/"""/ end=/"""/
