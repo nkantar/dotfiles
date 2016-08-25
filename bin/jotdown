@@ -1,0 +1,21 @@
+#/bin/bash
+
+set -e
+
+if [[ $@ != "" ]]
+then
+    HOME_DIR=$HOME
+    JOURNAL_DIR="$HOME_DIR/journal"
+    YEAR=$(date +"%Y")
+    MONTH=$(date +"%m")
+    DAY=$(date +"%d")
+    DIR_PATH="$JOURNAL_DIR/$YEAR/$MONTH"
+    FILE_PATH="$DIR_PATH/$YEAR-$MONTH-$DAY.md"
+
+    mkdir -p $DIR_PATH
+    echo "$@\n" >> $FILE_PATH
+    echo "Jotted down: $@"
+else
+    echo "Nothing to jot down..."
+fi
+
