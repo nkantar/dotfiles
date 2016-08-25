@@ -6,6 +6,7 @@ set background=dark
 set hlsearch
 set relativenumber
 set colorcolumn=80,100
+"let &colorcolumn=join(range(81,999),",")
 set cursorline
 
 let g:gitgutter_sign_column_always = 1
@@ -51,3 +52,6 @@ set statusline+=%{winnr()}
 
 hi StatusLine ctermfg=248 ctermbg=236
 hi StatusLineNC ctermfg=240 ctermbg=236
+
+colorscheme nofrils-dark
+
