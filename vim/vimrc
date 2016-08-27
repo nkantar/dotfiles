@@ -1,7 +1,248 @@
-source ~/.vim/plugins.vim
-source ~/.vim/appearance.vim
-source ~/.vim/behavior.vim
-source ~/.vim/keymappings.vim
-source ~/.vim/filetypes.vim
+"==================================================
+" Plugins
+"-------------------------
 
-source ~/.vim/google.vim " TODO: integrate this better
+call plug#begin('~/.vim/plugged')
+
+Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dracula/vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'elixir-lang/vim-elixir'
+Plug 'jreybert/vimagit'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'justinmk/vim-sneak'
+Plug 'lambdatoast/elm.vim'
+Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
+Plug 'mtth/scratch.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'robertmeta/nofrils'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'SirVer/ultisnips'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-git'
+Plug 'Valloric/YouCompleteMe'
+
+Plug 'nkantar/GHT.vim'
+
+call plug#end()
+
+
+"==================================================
+" Filetypes
+" TODO clean this up a bit
+"-------------------------
+
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+set wildignore+=*.pyc
+set backupskip=/tmp/*,/private/tmp/*
+
+let b:current_syntax = "gitconfig-local"
+
+
+"==================================================
+" Google
+"-------------------------
+
+" Indent Python in the Google way.
+" https://google.github.io/styleguide/pyguide.html
+
+setlocal indentexpr=GetGooglePythonIndent(v:lnum)
+
+let s:maxoff = 50 " maximum number of lines to look backwards.
+
+function! GetGooglePythonIndent(lnum)
+
+  " Indent inside parens.
+  " Align with the open paren unless it is at the end of the line.
+  " E.g.
+  "   open_paren_not_at_EOL(100,
+  "                         (200,
+  "                          300),
+  "                         400)
+  "   open_paren_at_EOL(
+  "       100, 200, 300, 400)
+  call cursor(a:lnum, 1)
+  let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
+        \ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
+        \ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
+        \ . " =~ '\\(Comment\\|String\\)$'")
+  if par_line > 0
+    call cursor(par_line, 1)
+    if par_col != col("$") - 1
+      return par_col
+    endif
+  endif
+
+  " Delegate the rest to the original function.
+  return GetPythonIndent(a:lnum)
+
+endfunction
+
+let pyindent_nested_paren="&sw*2"
+let pyindent_open_paren="&sw*2"
+
+
+"==================================================
+" Behavior
+"-------------------------
+
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set smarttab
+
+set laststatus=2
+set autoindent
+
+set autoread
+
+" split stuff
+set splitbelow
+set splitright
+
+set clipboard=unnamed
+
+set updatetime=250
+
+" make backspace work like most other apps
+set backspace=2
+
+let g:UltiSnipsExpandTrigger='<c-\>'
+
+let g:ctrlp_custom_ignore = 'venv'
+
+set completeopt-=preview
+
+set shell=zsh\ -l
+
+" from https://github.com/airblade/dotvim/blob/dd5d7737e39aad5e24c1a4a8c0d115ff2ae7b488/vimrc#L109-L111
+set nobackup                      " No backups.
+set nowritebackup                 " No backups.
+set noswapfile                    " No swap files; more hassle than they're worth.
+
+" Source: http://stackoverflow.com/a/6404246/151007
+let i = 1
+" If I have more than 9 windows open I have bigger problems :)
+while i <= 9
+  execute 'nnoremap <Leader>'.i.' :'.i.'wincmd w<CR>'
+  let i = i + 1
+endwhile
+
+
+"==================================================
+" Appearance
+"-------------------------
+
+set nocompatible              " be iMproved, required
+syntax on
+set number
+colorscheme dracula
+set background=dark
+set relativenumber
+set colorcolumn=80,100
+"let &colorcolumn=join(range(81,999),",")
+set cursorline
+
+let g:gitgutter_sign_column_always = 1
+let g:gitgutter_max_signs = 10000
+
+function! PasteForStatusline()
+    let paste_status = &paste
+    if paste_status == 1
+        return " [paste] "
+    else
+        return ""
+    endif
+endfunction
+
+set laststatus=2
+
+hi User1 ctermfg=240 ctermbg=236 cterm=bold
+
+set statusline=
+
+set statusline+=%1*%{expand('%:h')}/%*
+set statusline+=%t
+set statusline+=\ 
+set statusline+=%y  " filetype
+set statusline+=\ 
+set statusline+=%m  " modified flag
+set statusline+=\ 
+
+set statusline+=%=  " right-align from now on
+
+set statusline+=%{PasteForStatusline()}
+
+set statusline+=\[%{mode()}\]
+set statusline+=\ 
+set statusline+=%v  " column number
+set statusline+=\:
+set statusline+=%l  " row number
+set statusline+=\/
+set statusline+=%L  " row total
+set statusline+=\ 
+set statusline+=%{winnr()}
+
+hi StatusLine ctermfg=248 ctermbg=236
+hi StatusLineNC ctermfg=240 ctermbg=236
+
+colorscheme nofrils-dark
+
+syn region Comment start=/"""/ end=/"""/
+
+colorscheme dracula
+
+
+"==================================================
+" Keymappings
+"-------------------------
+
+" <C-c> over Esc
+inoremap <Esc> <Nop>
+
+" spacebar makes for a great leader key
+nnoremap <Space> <Nop>
+map <Space> <Leader>
+map <Space><Space> <Leader><Leader>
+
+" necessary for incessant Vim config updates
+nnoremap <Leader>s :source ~/.vim/vimrc<CR>
+
+" hjkl over cursor keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" better movement between splits
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" saving and quitting are very common commands
+nnoremap <Leader>ww :write<CR>
+nnoremap <Leader>wq :write \| quit<CR>
+nnoremap <Leader>qq :quit<CR>
+nnoremap <Leader>qa :quitall<CR>
+
+nnoremap <Leader>p :set invpaste paste?<CR>
+nnoremap <Leader>; :
+nnoremap <Leader>vs :vsplit<CR>
+nnoremap <Leader>hs :split<CR>
+
+nnoremap <Leader>vn :vnew<CR>
+nnoremap <Leader>hn :new<CR>
+
+nnoremap <Leader>mark :set syntax=markdown<CR>
+
+" find TODO comments
+noremap <Leader>r /TODO\:\ Nik\ \-\ remove<CR>
+noremap <Leader>n /TODO\:\ Nik<CR>
+noremap <Leader>l :noh<CR>
+
