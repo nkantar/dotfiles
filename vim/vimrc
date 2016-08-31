@@ -191,11 +191,7 @@ set statusline+=%{winnr()}
 hi StatusLine ctermfg=248 ctermbg=236
 hi StatusLineNC ctermfg=240 ctermbg=236
 
-colorscheme nofrils-dark
-
 syn region Comment start=/"""/ end=/"""/
-
-colorscheme dracula
 
 
 "==================================================
@@ -240,9 +236,17 @@ nnoremap <Leader>vn :vnew<CR>
 nnoremap <Leader>hn :new<CR>
 
 nnoremap <Leader>mark :set syntax=markdown<CR>
+nnoremap <Leader>pyth :set syntax=python<CR>
 
 " find TODO comments
-noremap <Leader>r /TODO\:\ Nik\ \-\ remove<CR>
-noremap <Leader>n /TODO\:\ Nik<CR>
-noremap <Leader>l :noh<CR>
+noremap <Leader>fr /TODO\:\ Nik\ \-\ remove<CR>
+noremap <Leader>fn /TODO\:\ Nik<CR>
+noremap <Leader>fl :noh<CR>
+
+
+"==================================================
+" Temporary (Insanity)
+"-------------------------
+
+let g:ycm_auto_trigger=0
 
