@@ -37,5 +37,5 @@
     ru = remote update
     c = commit --verbose
     amend = commit --amend
-    l = log --pretty=\"%h  %<(16)%C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
+    l = log --pretty=\"%h  %C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
 
