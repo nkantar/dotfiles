@@ -38,4 +38,5 @@
     c = commit --verbose
     amend = commit --amend
     l = log --pretty=\"%h  %C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
+    dic = diff --cached
 
