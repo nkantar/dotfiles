@@ -158,6 +158,8 @@ set colorcolumn=80,100
 "let &colorcolumn=join(range(81,10000),",")
 set cursorline
 
+set hlsearch
+
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_max_signs = 10000
 
@@ -236,7 +238,7 @@ nnoremap <Leader>w :write<CR>
 nnoremap <Leader>q :quit<CR>
 nnoremap <Leader>x :xit<CR>
 
-nnoremap <Leader>p :set invpaste paste?<CR>
+nnoremap <Leader>pa :set invpaste paste?<CR>
 nnoremap <Leader>; :
 nnoremap <Leader>vs :vsplit<CR>
 nnoremap <Leader>hs :split<CR>
@@ -247,8 +249,11 @@ nnoremap <Leader>hn :new<CR>
 nnoremap <Leader>goyo :Goyo<CR>
 nnoremap <Leader>lime :Limelight<CR>
 
-nnoremap <Leader>mark :set syntax=markdown<CR>
-nnoremap <Leader>pyth :set syntax=python<CR>
+nnoremap <Leader>md :set syntax=markdown<CR>
+nnoremap <Leader>py :set syntax=python<CR>
+nnoremap <Leader>js :set syntax=javascript<CR>
+nnoremap <Leader>ht :set syntax=html<CR>
+nnoremap <Leader>hd :set syntax=htmldjango<CR>
 
 " find TODO comments
 noremap <Leader>fr /TODO\:\ Nik\ \-\ remove<CR>
