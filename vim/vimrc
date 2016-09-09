@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dbmrq/vim-ditto'
 Plug 'dracula/vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'elixir-lang/vim-elixir'
@@ -28,6 +29,10 @@ Plug 'tpope/vim-git'
 Plug 'Valloric/YouCompleteMe'
 
 Plug 'nkantar/GHT.vim'
+
+" Temporary section
+Plug 'ajh17/Spacegray.vim'
+Plug 'sjl/badwolf'
 
 call plug#end()
 
@@ -98,6 +103,9 @@ set smarttab
 
 set laststatus=2
 set autoindent
+set smartindent
+
+set scrolloff=15
 
 set autoread
 
@@ -119,6 +127,8 @@ let g:ctrlp_custom_ignore = 'venv'
 set completeopt-=preview
 
 set shell=zsh\ -l
+
+set shortmess+=c
 
 " from https://github.com/airblade/dotvim/blob/dd5d7737e39aad5e24c1a4a8c0d115ff2ae7b488/vimrc#L109-L111
 set nobackup                      " No backups.
@@ -145,7 +155,7 @@ colorscheme dracula
 set background=dark
 set relativenumber
 set colorcolumn=80,100
-"let &colorcolumn=join(range(81,999),",")
+"let &colorcolumn=join(range(81,10000),",")
 set cursorline
 
 let g:gitgutter_sign_column_always = 1
@@ -207,7 +217,7 @@ map <Space> <Leader>
 map <Space><Space> <Leader><Leader>
 
 " necessary for incessant Vim config updates
-nnoremap <Leader>s :source ~/.vim/vimrc<CR>
+nnoremap <Leader>s :source $MYVIMRC<CR>
 
 " hjkl over cursor keys
 noremap <Up> <NOP>
@@ -222,10 +232,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " saving and quitting are very common commands
-nnoremap <Leader>ww :write<CR>
-nnoremap <Leader>wq :write \| quit<CR>
-nnoremap <Leader>qq :quit<CR>
-nnoremap <Leader>qa :quitall<CR>
+nnoremap <Leader>w :write<CR>
+nnoremap <Leader>q :quit<CR>
+nnoremap <Leader>x :xit<CR>
 
 nnoremap <Leader>p :set invpaste paste?<CR>
 nnoremap <Leader>; :
@@ -234,6 +243,9 @@ nnoremap <Leader>hs :split<CR>
 
 nnoremap <Leader>vn :vnew<CR>
 nnoremap <Leader>hn :new<CR>
+
+nnoremap <Leader>goyo :Goyo<CR>
+nnoremap <Leader>lime :Limelight<CR>
 
 nnoremap <Leader>mark :set syntax=markdown<CR>
 nnoremap <Leader>pyth :set syntax=python<CR>
@@ -248,5 +260,9 @@ noremap <Leader>fl :noh<CR>
 " Temporary (Insanity)
 "-------------------------
 
-let g:ycm_auto_trigger=0
+colorscheme spacegray
+colorscheme badwolf
+colorscheme goodwolf
+
+
 
