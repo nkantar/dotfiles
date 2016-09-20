@@ -19,20 +19,20 @@ Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'robertmeta/nofrils'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'SirVer/ultisnips'
+Plug 'sjl/badwolf'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'Valloric/YouCompleteMe'
 
 Plug 'nkantar/GHT.vim'
 
 " Temporary section
-Plug 'ajh17/Spacegray.vim'
-Plug 'sjl/badwolf'
+Plug 'junegunn/vim-emoji'
 
 call plug#end()
 
@@ -151,8 +151,7 @@ endwhile
 set nocompatible              " be iMproved, required
 syntax on
 set number
-colorscheme dracula
-set background=dark
+colorscheme goodwolf
 set relativenumber
 set colorcolumn=80,100
 "let &colorcolumn=join(range(81,10000),",")
@@ -219,7 +218,7 @@ map <Space> <Leader>
 map <Space><Space> <Leader><Leader>
 
 " necessary for incessant Vim config updates
-nnoremap <Leader>s :source $MYVIMRC<CR>
+nnoremap <Leader>ss :source $MYVIMRC<CR>
 
 " hjkl over cursor keys
 noremap <Up> <NOP>
@@ -254,6 +253,7 @@ nnoremap <Leader>py :set syntax=python<CR>
 nnoremap <Leader>js :set syntax=javascript<CR>
 nnoremap <Leader>ht :set syntax=html<CR>
 nnoremap <Leader>hd :set syntax=htmldjango<CR>
+nnoremap <Leader>sh :set syntax=sh<CR>
 
 " find TODO comments
 noremap <Leader>fr /TODO\:\ Nik\ \-\ remove<CR>
@@ -265,9 +265,4 @@ noremap <Leader>fl :noh<CR>
 " Temporary (Insanity)
 "-------------------------
 
-colorscheme spacegray
-colorscheme badwolf
-colorscheme goodwolf
-
-
-
+set omnifunc=emoji#complete
