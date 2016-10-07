@@ -6,16 +6,17 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dbmrq/vim-ditto'
-Plug 'dracula/vim'
+"Plug 'dbmrq/vim-ditto'
+"Plug 'dracula/vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'elixir-lang/vim-elixir'
-Plug 'jreybert/vimagit'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+"Plug 'elixir-lang/vim-elixir'
+"Plug 'jreybert/vimagit'
+Plug 'junegunn/fzf'
+"Plug 'junegunn/goyo.vim'
+"Plug 'junegunn/limelight.vim'
 Plug 'justinmk/vim-sneak'
-Plug 'lambdatoast/elm.vim'
-Plug 'majutsushi/tagbar'
+"Plug 'lambdatoast/elm.vim'
+"Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
 Plug 'ntpeters/vim-better-whitespace'
@@ -24,15 +25,19 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/badwolf'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git'
+"Plug 'terryma/vim-multiple-cursors'
+"Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-git'
 Plug 'Valloric/YouCompleteMe'
 
 Plug 'nkantar/GHT.vim'
+Plug 'nkantar/ripgrep.vim'
 
 " Temporary section
 Plug 'junegunn/vim-emoji'
+"Plug 'reedes/vim-colors-pencil'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'nathanlong/vim-colors-writer'
 
 call plug#end()
 
@@ -105,7 +110,7 @@ set laststatus=2
 set autoindent
 set smartindent
 
-set scrolloff=15
+set scrolloff=25
 
 set autoread
 
@@ -154,13 +159,12 @@ set number
 colorscheme goodwolf
 set relativenumber
 set colorcolumn=80,100
-"let &colorcolumn=join(range(81,10000),",")
 set cursorline
 
 set hlsearch
 
 let g:gitgutter_sign_column_always = 1
-let g:gitgutter_max_signs = 10000
+let g:gitgutter_max_signs = 110
 
 function! PasteForStatusline()
     let paste_status = &paste
@@ -266,3 +270,5 @@ noremap <Leader>fl :noh<CR>
 "-------------------------
 
 set omnifunc=emoji#complete
+
+set lazyredraw
