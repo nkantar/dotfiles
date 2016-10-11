@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Copy the last commit's hash to the clipboard.
+# Handy for cherry-picking, for example.
+
+set -e
+commit_hash=$(git log HEAD~1..HEAD --pretty="%H")
+echo $commit_hash | pbcopy
+echo "Copied commit hash $commit_hash to clipboard."
