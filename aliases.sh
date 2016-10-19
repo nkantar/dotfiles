@@ -6,12 +6,17 @@ alias clat="clear && ls -lat"
 alias ll="ls -l"
 alias cll="cls && ls -l"
 
+alias cdsl="cd ~/Projects/SimpleLegal"
+alias cdeb="cd ~/Projects/SimpleLegal/ebill"
+alias cdvp="cd ~/Projects/SimpleLegal/vendorportal"
+
 # applications
 
 alias v='vim'
 alias va='vagrant'
 alias g='git'
 alias p='python'
+alias dcmp='docker-compose'
 
 alias jd='jotdown'
 

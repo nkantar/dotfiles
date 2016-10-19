@@ -40,3 +40,5 @@
     l = log --pretty=\"%h  %C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
     dic = diff --cached
 
+    ld = log HEAD~1..HEAD --pretty="%H"
+
