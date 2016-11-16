@@ -5,13 +5,14 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'dbmrq/vim-ditto'
 "Plug 'dracula/vim'
 Plug 'easymotion/vim-easymotion'
 "Plug 'elixir-lang/vim-elixir'
 Plug 'jreybert/vimagit'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 "Plug 'junegunn/goyo.vim'
 "Plug 'junegunn/limelight.vim'
 Plug 'justinmk/vim-sneak'
@@ -40,6 +41,10 @@ Plug 'junegunn/vim-emoji'
 "Plug 'nathanlong/vim-colors-writer'
 
 Plug 'cocopon/iceberg.vim'
+
+"Plug 'benmills/vimux'
+
+"Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
@@ -256,6 +261,9 @@ nnoremap <Leader>hs :split<CR>
 nnoremap <Leader>vn :vnew<CR>
 nnoremap <Leader>hn :new<CR>
 
+nnoremap <Leader>vm :Vmx 
+command! -nargs=1 Vmx call g:VimuxRunCommand(<f-args>)<CR>
+
 nnoremap <Leader>goyo :Goyo<CR>
 nnoremap <Leader>lime :Limelight<CR>
 
@@ -267,9 +275,13 @@ nnoremap <Leader>hd :set syntax=htmldjango<CR>
 nnoremap <Leader>sh :set syntax=sh<CR>
 
 " find TODO comments
-noremap <Leader>fr /TODO\:\ Nik\ \-\ remove<CR>
-noremap <Leader>fn /TODO\:\ Nik<CR>
-noremap <Leader>fl :noh<CR>
+nnoremap <Leader>fr /TODO\:\ Nik\ \-\ remove<CR>
+nnoremap <Leader>fn /TODO\:\ Nik<CR>
+nnoremap <Leader>fl :noh<CR>
+
+" fzf
+nnoremap <Leader>ff :Files<CR>
+nnoremap <Leader>fc :Commits<CR>
 
 
 "==================================================
@@ -286,3 +298,17 @@ colorscheme iceberg
 
 " for MacVim
 set guioptions=
+
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+"let g:syntastic_quiet_messages = {
+    "\ "!level": "errors",
+    "\ "type": "style" }
+
