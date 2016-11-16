@@ -146,7 +146,7 @@ set shortmess+=c
 " from https://github.com/airblade/dotvim/blob/dd5d7737e39aad5e24c1a4a8c0d115ff2ae7b488/vimrc#L109-L111
 set nobackup                      " No backups.
 set nowritebackup                 " No backups.
-set noswapfile                    " No swap files; more hassle than they're worth.
+"set noswapfile                    " No swap files; more hassle than they're worth. | Actually...
 
 " Source: http://stackoverflow.com/a/6404246/151007
 let i = 1
