@@ -42,6 +42,8 @@ Plug 'junegunn/vim-emoji'
 
 Plug 'cocopon/iceberg.vim'
 
+Plug 'junegunn/gv.vim'
+
 "Plug 'benmills/vimux'
 
 "Plug 'vim-syntastic/syntastic'
