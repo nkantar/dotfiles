@@ -111,3 +111,5 @@ fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+zstyle :omz:plugins:ssh-agent agent-forwarding on
