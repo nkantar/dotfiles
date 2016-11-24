@@ -5,19 +5,13 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-"Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'dbmrq/vim-ditto'
-"Plug 'dracula/vim'
+Plug 'cocopon/iceberg.vim'
 Plug 'easymotion/vim-easymotion'
-"Plug 'elixir-lang/vim-elixir'
 Plug 'jreybert/vimagit'
+Plug 'junegunn/vim-emoji'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-"Plug 'junegunn/goyo.vim'
-"Plug 'junegunn/limelight.vim'
 Plug 'justinmk/vim-sneak'
-"Plug 'lambdatoast/elm.vim'
-"Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
 Plug 'ntpeters/vim-better-whitespace'
@@ -26,27 +20,20 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/badwolf'
-"Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'Valloric/YouCompleteMe'
+Plug 'vim-syntastic/syntastic'
 
 Plug 'nkantar/GHT.vim'
+
+"Plug 'terryma/vim-multiple-cursors'
+"Plug 'elixir-lang/vim-elixir'
+"Plug 'lambdatoast/elm.vim'
+"Plug 'junegunn/goyo.vim'
+"Plug 'junegunn/limelight.vim'
+
 "Plug 'nkantar/ripgrep.vim'
-
-" Temporary section
-Plug 'junegunn/vim-emoji'
-"Plug 'reedes/vim-colors-pencil'
-"Plug 'altercation/vim-colors-solarized'
-"Plug 'nathanlong/vim-colors-writer'
-
-Plug 'cocopon/iceberg.vim'
-
-Plug 'junegunn/gv.vim'
-
-"Plug 'benmills/vimux'
-
-"Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
@@ -136,8 +123,6 @@ set updatetime=250
 set backspace=2
 
 let g:UltiSnipsExpandTrigger='<c-\>'
-
-let g:ctrlp_custom_ignore = 'venv'
 
 set completeopt-=preview
 
@@ -301,17 +286,20 @@ colorscheme iceberg
 " for MacVim
 set guioptions=
 
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 "let g:syntastic_quiet_messages = {
     "\ "!level": "errors",
     "\ "type": "style" }
 
 let $FZF_DEFAULT_COMMAND='ag -g ""'
+
+let g:syntastic_python_checkers = ['python', 'flake8']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_flake8_args='--ignore=E1,E2,E3,E4,E5,E6,E7,E8,E9,W1,W2,W3,W4,W5,W6,W7,W8,W9'
+
