@@ -16,6 +16,7 @@ alias v='vim'
 alias va='vagrant'
 alias g='git'
 alias p='python'
+alias p3='python3'
 alias dcmp='docker-compose'
 
 alias jd='jotdown'
