@@ -11,9 +11,10 @@ then
     DAY=$(date +"%d")
     DIR_PATH="$JOURNAL_DIR/$YEAR/$MONTH"
     FILE_PATH="$DIR_PATH/$YEAR-$MONTH-$DAY.md"
+    DATE=$(date +"%H%M%S")
 
     mkdir -p $DIR_PATH
-    echo "$@\n" >> $FILE_PATH
+    echo "$DATE $@\n" >> $FILE_PATH
     echo "Jotted down: $@"
 else
     echo "Nothing to jot down..."
