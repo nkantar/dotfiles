@@ -50,9 +50,9 @@ PROMPT="
 %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
 %(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
 %{$fg[white]%}@ \
-%{$fg[green]%}%m ($(uname)) \
+%{$fg[blue]%}%m ($(uname)) \
 %{$fg[white]%}in \
-%{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
+%{$fg[green]%}%~%{$reset_color%}\
 ${hg_info}\
 ${git_info}\
  \
