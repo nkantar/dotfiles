@@ -90,10 +90,7 @@ if [[ -a ~/.env_vars.sh ]] ; then
 fi
 
 #eval $(docker-machine env default)
-export EDITOR=/usr/local/bin/vim
-
-export GPG_TTY=$(tty)
-eval $(gpg-agent --daemon --allow-preset-passphrase)
+export EDITOR=/usr/bin/vim
 
 export HOMEBREW_NO_ANALYTICS=1
 
@@ -101,15 +98,9 @@ export HOMEBREW_NO_ANALYTICS=1
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
-if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
-  export GPG_AGENT_INFO
-else
-  eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
-fi
-
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
+
+which kontena > /dev/null && . "$( kontena whoami --bash-completion-path )"
+
