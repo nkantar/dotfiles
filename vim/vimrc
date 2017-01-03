@@ -36,6 +36,10 @@ Plug 'nkantar/GHT.vim'
 
 "Plug 'nkantar/ripgrep.vim'
 
+"Plug 'trevordmiller/nova-vim'
+"Plug 'zanglg/nova.vim'
+Plug 'nkantar/nova.vim'
+
 call plug#end()
 
 
@@ -280,9 +284,12 @@ set omnifunc=emoji#complete
 
 "set lazyredraw
 
+set termguicolors
 set background=dark
-colorscheme GoodWolf
-colorscheme iceberg
+"colorscheme GoodWolf
+"colorscheme iceberg
+
+colorscheme nova
 
 " for MacVim
 set guioptions=
