@@ -1,5 +1,5 @@
 # ls
-alias ls="ls -G"
+alias ls="ls --color"
 alias cls="clear && ls"
 alias lat="ls -lat"
 alias clat="clear && ls -lat"
@@ -17,6 +17,8 @@ alias va='vagrant'
 alias g='git'
 alias p='python'
 alias p3='python3'
+alias ve='virtualenv'
+alias ve3='python3 -m venv'
 alias dcmp='docker-compose'
 
 alias jd='jotdown'
