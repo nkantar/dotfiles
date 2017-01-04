@@ -37,8 +37,7 @@ Plug 'nkantar/GHT.vim'
 "Plug 'nkantar/ripgrep.vim'
 
 "Plug 'trevordmiller/nova-vim'
-"Plug 'zanglg/nova.vim'
-Plug 'nkantar/nova.vim'
+Plug 'zanglg/nova.vim'
 
 call plug#end()
 
