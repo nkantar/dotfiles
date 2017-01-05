@@ -36,8 +36,8 @@ Plug 'nkantar/GHT.vim'
 
 "Plug 'nkantar/ripgrep.vim'
 
-"Plug 'trevordmiller/nova-vim'
-Plug 'zanglg/nova.vim'
+Plug 'trevordmiller/nova-vim'
+"Plug 'zanglg/nova.vim'
 
 call plug#end()
 
@@ -157,7 +157,7 @@ syntax on
 set number
 colorscheme goodwolf
 set relativenumber
-set colorcolumn=73,80,100
+"set colorcolumn=73,80,100
 set cursorline
 
 set hlsearch
