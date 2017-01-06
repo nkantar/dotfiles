@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
-Plug 'cocopon/iceberg.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/vim-emoji'
@@ -20,7 +19,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'SirVer/ultisnips'
-Plug 'sjl/badwolf'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'Valloric/YouCompleteMe'
@@ -36,8 +34,10 @@ Plug 'nkantar/GHT.vim'
 
 "Plug 'nkantar/ripgrep.vim'
 
-Plug 'trevordmiller/nova-vim'
-"Plug 'zanglg/nova.vim'
+" Colorschemes
+Plug 'cocopon/iceberg.vim'
+Plug 'dracula/vim'
+Plug 'sjl/badwolf'
 
 call plug#end()
 
@@ -288,10 +288,7 @@ set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
-"colorscheme GoodWolf
-"colorscheme iceberg
-
-colorscheme nova
+colorscheme dracula
 
 " for MacVim
 set guioptions=
