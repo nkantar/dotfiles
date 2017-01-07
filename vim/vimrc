@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
-Plug 'cocopon/iceberg.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/vim-emoji'
@@ -20,7 +19,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'SirVer/ultisnips'
-Plug 'sjl/badwolf'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'Valloric/YouCompleteMe'
@@ -35,6 +33,11 @@ Plug 'nkantar/GHT.vim'
 "Plug 'junegunn/limelight.vim'
 
 "Plug 'nkantar/ripgrep.vim'
+
+" Colorschemes
+Plug 'cocopon/iceberg.vim'
+Plug 'dracula/vim'
+Plug 'sjl/badwolf'
 
 call plug#end()
 
@@ -154,7 +157,7 @@ syntax on
 set number
 colorscheme goodwolf
 set relativenumber
-set colorcolumn=73,80,100
+"set colorcolumn=73,80,100
 set cursorline
 
 set hlsearch
@@ -280,9 +283,12 @@ set omnifunc=emoji#complete
 
 "set lazyredraw
 
+set termguicolors
 set background=dark
-colorscheme GoodWolf
-colorscheme iceberg
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
+
+colorscheme dracula
 
 " for MacVim
 set guioptions=

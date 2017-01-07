@@ -90,9 +90,6 @@ if [[ -a ~/.env_vars.sh ]] ; then
 fi
 
 #eval $(docker-machine env default)
-export EDITOR=/usr/local/bin/vim
-
-export GPG_TTY=$(tty)
 
 export HOMEBREW_NO_ANALYTICS=1
 
@@ -100,9 +97,9 @@ export HOMEBREW_NO_ANALYTICS=1
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
+
+which kontena > /dev/null && . "$( kontena whoami --bash-completion-path )"
+
