@@ -157,7 +157,7 @@ syntax on
 set number
 colorscheme goodwolf
 set relativenumber
-"set colorcolumn=73,80,100
+set colorcolumn=73,80,100
 set cursorline
 
 set hlsearch
@@ -322,3 +322,5 @@ function! JotDown(param)
 endfunction
 command! -nargs=1 JD call JotDown(<f-args>)
 nnoremap <Leader>jd :JD<Space>
+
+autocmd Filetype gitcommit setlocal spell textwidth=72
