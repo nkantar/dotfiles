@@ -1,5 +1,9 @@
 # ls
-alias ls="ls --color"
+if [[ $(uname) == 'Darwin' ]] ; then
+    alias ls="ls -G"
+else
+    alias ls="ls --color"
+fi
 alias cls="clear && ls"
 alias lat="ls -lat"
 alias clat="clear && ls -lat"
