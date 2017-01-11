@@ -209,7 +209,7 @@ set statusline+=%{winnr()}
 hi StatusLine ctermfg=248 ctermbg=236
 hi StatusLineNC ctermfg=240 ctermbg=236
 
-syn region Comment start=/"""/ end=/"""/
+au BufReadPost *.py syn region Comment start=/"""/ end=/"""/
 
 
 "==================================================
