@@ -36,8 +36,11 @@ Plug 'nkantar/GHT.vim'
 
 " Colorschemes
 Plug 'cocopon/iceberg.vim'
-Plug 'dracula/vim'
+"Plug 'dracula/vim'
 Plug 'sjl/badwolf'
+
+" Comments are red
+Plug 'nkantar/bloodshot.vim'
 
 call plug#end()
 
@@ -288,7 +291,7 @@ set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
-colorscheme dracula
+colorscheme bloodshot
 
 " for MacVim
 set guioptions=
