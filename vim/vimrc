@@ -260,12 +260,12 @@ command! -nargs=1 Vmx call g:VimuxRunCommand(<f-args>)<CR>
 nnoremap <Leader>goyo :Goyo<CR>
 nnoremap <Leader>lime :Limelight<CR>
 
-nnoremap <Leader>md :set syntax=markdown<CR>
-nnoremap <Leader>py :set syntax=python<CR>
-nnoremap <Leader>js :set syntax=javascript<CR>
-nnoremap <Leader>ht :set syntax=html<CR>
-nnoremap <Leader>hd :set syntax=htmldjango<CR>
-nnoremap <Leader>sh :set syntax=sh<CR>
+nnoremap <Leader>md :set syntax=markdown<CR>:set filetype=markdown<CR>
+nnoremap <Leader>py :set syntax=python<CR>:set filetype=python<CR>
+nnoremap <Leader>js :set syntax=javascript<CR>:set filetype=javascript<CR>
+nnoremap <Leader>ht :set syntax=html<CR>:set filetype=html<CR>
+nnoremap <Leader>hd :set syntax=htmldjango<CR>:set filetype=htmldjango<CR>
+nnoremap <Leader>sh :set syntax=sh<CR>:set filetype=sh<CR>
 
 " find TODO comments
 nnoremap <Leader>fr /TODO\:\ Nik\ \-\ remove<CR>
