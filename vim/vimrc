@@ -158,7 +158,6 @@ endwhile
 set nocompatible              " be iMproved, required
 syntax on
 set number
-colorscheme goodwolf
 set relativenumber
 set colorcolumn=73,80,100
 set cursorline
@@ -327,3 +326,5 @@ command! -nargs=1 JD call JotDown(<f-args>)
 nnoremap <Leader>jd :JD<Space>
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+let base16colorspace=256
