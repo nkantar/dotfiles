@@ -13,6 +13,7 @@ alias cll="cls && ls -l"
 alias cdsl="cd ~/Projects/SimpleLegal"
 alias cdeb="cd ~/Projects/SimpleLegal/ebill"
 alias cdvp="cd ~/Projects/SimpleLegal/vendorportal"
+alias slv="cd ~/Projects/SimpleLegal && vim ."
 
 # applications
 
