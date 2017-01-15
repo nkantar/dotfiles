@@ -3,8 +3,8 @@
 # The FreeType rasterizer needs to know the device DPI for best results
 # (changes require restart)
 dpi:
-  x: 109.0
-  y: 109.0
+  x: 227
+  y: 227
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -16,21 +16,21 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Operator Mono  # should be "Menlo" or something on macOS.
+    family: mononoki  # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
-    style: Book
+    style: Regular
 
   # The bold font face
   bold:
-    family: Operator Mono  # should be "Menlo" or something on macOS.
+    family: mononoki  # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Bold
 
   # The italic font face
   italic:
-    family: Operator Mono  # should be "Menlo" or something on macOS.
+    family: mononoki  # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
-    style: Book Italic
+    style: Italic
 
   # Point size of the font
   size: 12.0
