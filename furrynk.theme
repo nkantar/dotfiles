@@ -248,13 +248,13 @@ abstracts = {
   # activity in statusbar
 
   # ',' separator
-  sb_act_sep = "%c$*";
+  sb_act_sep = "%w$*";
   # normal text
-  sb_act_text = "%c$*";
+  sb_act_text = "%Z777777$*";
   # public message
   sb_act_msg = "%w$*";
   # hilight
-  sb_act_hilight = "%c$*";
+  sb_act_hilight = "%y$*";
   # hilight with specified color, $0 = color, $1 = text
   sb_act_hilight_color = "$0$1-%n";
 };
