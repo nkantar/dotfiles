@@ -285,7 +285,7 @@ set omnifunc=emoji#complete
 
 "set lazyredraw
 
-set termguicolors
+"set termguicolors
 set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
@@ -327,4 +327,5 @@ nnoremap <Leader>jd :JD<Space>
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
+set t_Co=256
 let base16colorspace=256
