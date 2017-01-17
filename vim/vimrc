@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -329,3 +328,4 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 
 set t_Co=256
 let base16colorspace=256
+let g:sneak#label = 1
