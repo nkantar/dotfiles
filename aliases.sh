@@ -15,6 +15,10 @@ alias cdeb="cd ~/Projects/SimpleLegal/ebill"
 alias cdvp="cd ~/Projects/SimpleLegal/vendorportal"
 alias slv="cd ~/Projects/SimpleLegal && vim ."
 
+alias agp="ag --python"
+alias agh="ag --html"
+alias agj="ag --js"
+
 # applications
 
 alias v='vim'
