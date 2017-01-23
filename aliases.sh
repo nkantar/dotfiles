@@ -10,6 +10,8 @@ alias clat="clear && ls -lat"
 alias ll="ls -l"
 alias cll="cls && ls -l"
 
+alias cdg="cd `git rev-parse --show-toplevel`"
+
 alias cdsl="cd ~/Projects/SimpleLegal"
 alias cdeb="cd ~/Projects/SimpleLegal/ebill"
 alias cdvp="cd ~/Projects/SimpleLegal/vendorportal"
