@@ -254,6 +254,11 @@ nnoremap <Leader>hs :split<CR>
 nnoremap <Leader>vn :vnew<CR>
 nnoremap <Leader>hn :new<CR>
 
+nnoremap <Leader>tw :tabnew<CR>
+nnoremap <Leader>tc :tabclose<CR>
+nnoremap <Leader>tn :tabnext<CR>
+nnoremap <Leader>tp :tabprevious<CR>
+
 nnoremap <Leader>vm :Vmx 
 command! -nargs=1 Vmx call g:VimuxRunCommand(<f-args>)<CR>
 
