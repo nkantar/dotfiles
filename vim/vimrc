@@ -38,10 +38,11 @@ Plug 'nkantar/GHT.vim'
 Plug 'cocopon/iceberg.vim'
 "Plug 'dracula/vim'
 Plug 'sjl/badwolf'
-Plug 'fneu/breezy'
+"Plug 'fneu/breezy'
 
 " Comments are red
 Plug 'nkantar/bloodshot.vim'
+Plug 'nkantar/breezy'
 
 call plug#end()
 
