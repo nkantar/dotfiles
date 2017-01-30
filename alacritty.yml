@@ -63,7 +63,7 @@ colors:
     red:     '0xff5555'
     green:   '0x50fa7b'
     yellow:  '0xf1fa8c'
-    blue:    '0xbd93f9'  # purple
+    blue:    '0x6272a4'
     magenta: '0xff79c6'  # pink
     cyan:    '0x8be9fd'
     white:   '0xffffff'
@@ -74,7 +74,7 @@ colors:
     red:     '0xff5555'
     green:   '0x50fa7b'
     yellow:  '0xf1fa8c'
-    blue:    '0xbd93f9'  # purple
+    blue:    '0x6272a4'
     magenta: '0xff79c6'  # pink
     cyan:    '0x8be9fd'
     white:   '0xffffff'
