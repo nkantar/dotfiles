@@ -22,8 +22,8 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'Valloric/YouCompleteMe'
-"Plug 'vim-syntastic/syntastic'
-Plug 'w0rp/ale'
+Plug 'vim-syntastic/syntastic'
+"Plug 'w0rp/ale'
 
 Plug 'nkantar/GHT.vim'
 
@@ -314,9 +314,9 @@ colorscheme breezy
 " for MacVim
 set guioptions=
 
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 "let g:syntastic_quiet_messages = {
     "\ "!level": "errors",
