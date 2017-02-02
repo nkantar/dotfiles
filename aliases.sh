@@ -10,10 +10,16 @@ alias clat="clear && ls -lat"
 alias ll="ls -l"
 alias cll="cls && ls -l"
 
+#alias cdg="cd `git rev-parse --show-toplevel`"
+
 alias cdsl="cd ~/Projects/SimpleLegal"
 alias cdeb="cd ~/Projects/SimpleLegal/ebill"
 alias cdvp="cd ~/Projects/SimpleLegal/vendorportal"
 alias slv="cd ~/Projects/SimpleLegal && vim ."
+
+alias agp="ag --python"
+alias agh="ag --html"
+alias agj="ag --js"
 
 # applications
 

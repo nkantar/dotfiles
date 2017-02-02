@@ -2,6 +2,9 @@
     name = Nikola Kantar
 [github]
     user = nkantar
+;in ~/.gitconfig-local
+;[user]
+    ;email = blah@example.com
 [core]
     pager = diff-so-fancy | less --tabs=4 -RFX
 [include]

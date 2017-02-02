@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -21,7 +22,8 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'Valloric/YouCompleteMe'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 
 Plug 'nkantar/GHT.vim'
 
@@ -37,9 +39,11 @@ Plug 'nkantar/GHT.vim'
 Plug 'cocopon/iceberg.vim'
 "Plug 'dracula/vim'
 Plug 'sjl/badwolf'
+"Plug 'fneu/breezy'
 
 " Comments are red
 Plug 'nkantar/bloodshot.vim'
+Plug 'nkantar/breezy'
 
 call plug#end()
 
@@ -158,7 +162,7 @@ set nocompatible              " be iMproved, required
 syntax on
 set number
 set relativenumber
-set colorcolumn=73,80,100
+set colorcolumn=73,80
 set cursorline
 
 set hlsearch
@@ -207,7 +211,18 @@ set statusline+=%{winnr()}
 hi StatusLine ctermfg=248 ctermbg=236
 hi StatusLineNC ctermfg=240 ctermbg=236
 
-au BufReadPost *.py syn region Comment start=/"""/ end=/"""/
+function! HighlightPythonDocstringsAsComments()
+    syn region Comment start=/"""/ end=/"""/
+endfunction
+
+au BufReadPost *.py call HighlightPythonDocstringsAsComments()
+autocmd Filetype python call HighlightPythonDocstringsAsComments()
+
+"autocmd Filetype ruby call SetRubyOptions()
+"function SetRubyOptions()
+    "setlocal ts=2
+    "...
+"endfunction
 
 
 "==================================================
@@ -253,6 +268,11 @@ nnoremap <Leader>hs :split<CR>
 nnoremap <Leader>vn :vnew<CR>
 nnoremap <Leader>hn :new<CR>
 
+nnoremap <Leader>tw :tabnew<CR>
+nnoremap <Leader>tc :tabclose<CR>
+nnoremap <Leader>tn :tabnext<CR>
+nnoremap <Leader>tp :tabprevious<CR>
+
 nnoremap <Leader>vm :Vmx 
 command! -nargs=1 Vmx call g:VimuxRunCommand(<f-args>)<CR>
 
@@ -284,19 +304,19 @@ set omnifunc=emoji#complete
 
 "set lazyredraw
 
-"set termguicolors
+set termguicolors
 set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
-colorscheme bloodshot
+colorscheme breezy
 
 " for MacVim
 set guioptions=
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 "let g:syntastic_quiet_messages = {
     "\ "!level": "errors",
@@ -310,6 +330,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_flake8_args='--ignore=E1,E2,E3,E4,E5,E6,E7,E8,E9,W1,W2,W3,W4,W5,W6,W7,W8,W9'
+
+let python_highlight_all=1
 
 highlight Comment cterm=italic
 
@@ -329,3 +351,5 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 set t_Co=256
 let base16colorspace=256
 let g:sneak#label = 1
+
+call HighlightPythonDocstringsAsComments()
