@@ -40,6 +40,11 @@ Plug 'cocopon/iceberg.vim'
 "Plug 'dracula/vim'
 Plug 'sjl/badwolf'
 "Plug 'fneu/breezy'
+Plug 'robertmeta/nofrils'
+Plug 'nkantar/vim-colors-off'
+
+"Plug 'google/yapf'
+"Plug 'python-mode/python-mode'
 
 " Comments are red
 Plug 'nkantar/bloodshot.vim'
@@ -309,7 +314,7 @@ set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
-colorscheme breezy
+colorscheme off
 
 " for MacVim
 set guioptions=
@@ -351,5 +356,7 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 set t_Co=256
 let base16colorspace=256
 let g:sneak#label = 1
+
+set nofoldenable    " disable folding
 
 call HighlightPythonDocstringsAsComments()
