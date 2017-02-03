@@ -36,7 +36,7 @@ Plug 'nkantar/GHT.vim'
 "Plug 'nkantar/ripgrep.vim'
 
 " Colorschemes
-Plug 'cocopon/iceberg.vim'
+"Plug 'cocopon/iceberg.vim'
 "Plug 'dracula/vim'
 Plug 'sjl/badwolf'
 "Plug 'fneu/breezy'
@@ -49,6 +49,7 @@ Plug 'nkantar/vim-colors-off'
 " Comments are red
 Plug 'nkantar/bloodshot.vim'
 Plug 'nkantar/breezy'
+Plug 'nkantar/iceberg.vim'
 
 call plug#end()
 
@@ -314,7 +315,7 @@ set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
-colorscheme off
+colorscheme iceberg
 
 " for MacVim
 set guioptions=
@@ -357,6 +358,6 @@ set t_Co=256
 let base16colorspace=256
 let g:sneak#label = 1
 
-set nofoldenable    " disable folding
+"set nofoldenable    " disable folding
 
 call HighlightPythonDocstringsAsComments()
