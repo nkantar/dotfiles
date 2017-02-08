@@ -121,7 +121,7 @@ set smarttab
 
 set laststatus=2
 set autoindent
-set smartindent
+set nosmartindent
 
 set scrolloff=25
 
