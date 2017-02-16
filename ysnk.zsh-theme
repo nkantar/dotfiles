@@ -5,6 +5,14 @@
 #
 # Mar 2013 Yad Smood
 
+local venv_info='$(venv_prompt_info)'
+venv_prompt_info() {
+    if [ -n "$VIRTUAL_ENV" ]; then
+        VENV=${VIRTUAL_ENV##*/}
+        echo -n "[$VENV] "
+    fi
+}
+
 # VCS
 YS_VCS_PROMPT_PREFIX1=" %{$fg[white]%}on%{$reset_color%} "
 YS_VCS_PROMPT_PREFIX2=":%{$fg[cyan]%}"
@@ -48,6 +56,7 @@ local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
 # $
 PROMPT="
 %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
+${venv_info}\
 %(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
 %{$fg[white]%}@ \
 %{$fg[blue]%}%m ($(uname)) \
