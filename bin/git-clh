@@ -1,11 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Copy the last commit's hash to the clipboard (with a newline at the end).
 # Handy for cherry-picking, for example.
 
 set -e
-#commit_hash=$(git rev-parse --verify HEAD | tr -d '\n')
-command=$(git rev-parse --verify HEAD)
-commit_hash=$(tr -d '\n' <<< "|$command|")
+
+commit_hash=$(git rev-parse --verify HEAD)
 echo $commit_hash | pbcopy
 echo "Copied commit hash $commit_hash to clipboard."

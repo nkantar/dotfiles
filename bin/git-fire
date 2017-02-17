@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Commit and push current state to origin in case of fire.
+
+set -e
+git checkout -b fire-`date +"%Y%m%d-%H%M%S"`
+git add -A
+git commit -am "The roof is on fire"
+git push origin HEAD
+
