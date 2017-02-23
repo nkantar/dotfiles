@@ -25,6 +25,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'vim-syntastic/syntastic'
 "Plug 'w0rp/ale'
 
+Plug 'vim-scripts/Css-Pretty'
 Plug 'nkantar/GHT.vim'
 
 "Plug 'terryma/vim-multiple-cursors'
