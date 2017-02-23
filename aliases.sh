@@ -34,3 +34,6 @@ alias dcmp='docker-compose'
 
 alias jd='jotdown'
 
+alias catt='pygmentize -O style=monokai -f console256 -g'
+lessc() { catt $1 | less }
+
