@@ -316,8 +316,6 @@ set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
-let g:iceberg_emphasize_comments=1
-
 colorscheme iceberg
 
 " for MacVim
