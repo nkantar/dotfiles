@@ -44,6 +44,8 @@ Plug 'sjl/badwolf'
 Plug 'robertmeta/nofrils'
 Plug 'nkantar/vim-colors-off'
 
+Plug 'danilo-augusto/vim-afterglow'
+
 "Plug 'google/yapf'
 "Plug 'python-mode/python-mode'
 
@@ -317,6 +319,7 @@ set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
 colorscheme iceberg
+colorscheme afterglow
 
 " for MacVim
 set guioptions=
