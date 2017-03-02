@@ -1,5 +1,23 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
+
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty it self.
+env:
+  # TERM env customization. Default is xterm-256color
+  # Note: the default TERM value `xterm-256color` does not
+  # specify all features alacritty supports. This does pose
+  # a few issues with programs relying on terminfo and the
+  # `tput` command
+  TERM: xterm-256color
+
+# Window dimensions in character columns and lines
+# (changes require restart)
+dimensions:
+  columns: 120
+  lines: 36
+
 # The FreeType rasterizer needs to know the device DPI for best results
 # (changes require restart)
 dpi:
@@ -16,19 +34,19 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: mononoki  # should be "Menlo" or something on macOS.
+    family: mononoki # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
-    family: mononoki  # should be "Menlo" or something on macOS.
+    family: mononoki # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Bold
 
   # The italic font face
   italic:
-    family: mononoki  # should be "Menlo" or something on macOS.
+    family: mononoki # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Italic
 
@@ -38,7 +56,12 @@ font:
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
     x: 0.0
-    y: 4.0
+    y: 0.0
+
+  # OS X only: use thin stroke font rendering. Thin strokes are suitable
+  # for retina displays, but for non-retina you probably want this set to
+  # false.
+  use_thin_strokes: false
 
 # Should display the render timer
 render_timer: false
@@ -80,6 +103,28 @@ colors:
     white:   '0xffffff'
 
 
+# Visual Bell
+#
+# Any time the BEL code is received, Alacritty "rings" the visual bell. Once
+# rung, the terminal background will be set to white and transition back to the
+# default background color. You can control the rate of this transition by
+# setting the `duration` property (represented in milliseconds). You can also
+# configure the transition function by setting the `animation` property.
+#
+# Possible values for `animation`
+# `Ease`
+# `EaseOut`
+# `EaseOutSine`
+# `EaseOutQuad`
+# `EaseOutCubic`
+# `EaseOutQuart`
+# `EaseOutQuint`
+# `EaseOutExpo`
+# `EaseOutCirc`
+# `Linear`
+#
+# To completely disable the visual bell, set its duration to 0.
+#
 visual_bell:
   animation: EaseOutExpo
   duration: 0
@@ -112,13 +157,19 @@ visual_bell:
 # specified string every time that binding is activated. These should generally
 # be escape sequences, but they can be configured to send arbitrary strings of
 # bytes. Possible values of `action` include `Paste` and `PasteSelection`.
+#
+# Want to add a binding (e.g. "PageUp") but are unsure what the X sequence
+# (e.g. "\x1b[5~") is? Open another terminal (like xterm) without tmux,
+# then run `showkey -a` to get the sequence associated to a key combination.
 key_bindings:
   - { key: V,        mods: Command, action: Paste                        }
   - { key: C,        mods: Command, action: Copy                         }
-  - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
-  - { key: Home,                    chars: "\x1b[1~",  mode: AppCursor   }
-  - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
-  - { key: End,                     chars: "\x1b[4~",  mode: AppCursor   }
+  - { key: Q,        mods: Command, action: Quit                         }
+  - { key: W,        mods: Command, action: Quit                         }
+  - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
+  - { key: Home,                    chars: "\x1b[1~",  mode: ~AppCursor  }
+  - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
+  - { key: End,                     chars: "\x1b[4~",  mode: ~AppCursor  }
   - { key: PageUp,                  chars: "\x1b[5~"                     }
   - { key: PageDown,                chars: "\x1b[6~"                     }
   - { key: Left,     mods: Shift,   chars: "\x1b[1;2D"                   }
@@ -141,6 +192,7 @@ key_bindings:
   - { key: Down,     mods: Alt,     chars: "\x1b[1;3B"                   }
   - { key: Down,                    chars: "\x1b[B",   mode: ~AppCursor  }
   - { key: Down,                    chars: "\x1bOB",   mode: AppCursor   }
+  - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                      }
   - { key: F1,                      chars: "\x1bOP"                      }
   - { key: F2,                      chars: "\x1bOQ"                      }
   - { key: F3,                      chars: "\x1bOR"                      }
@@ -154,6 +206,8 @@ key_bindings:
   - { key: F11,                     chars: "\x1b[23~"                    }
   - { key: F12,                     chars: "\x1b[24~"                    }
   - { key: Back,                    chars: "\x7f"                        }
+  - { key: Back,     mods: Alt,     chars: "\x1b\x7f"                    }
+  - { key: Insert,                  chars: "\x1b[2~"                     }
   - { key: Delete,                  chars: "\x1b[3~",  mode: AppKeypad   }
   - { key: Delete,                  chars: "\x1b[P",   mode: ~AppKeypad  }
 
@@ -174,4 +228,22 @@ key_bindings:
 # - Copy (TODO)
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+hide_cursor_when_typing: false
+
+# Shell
+#
+# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
+# Entries in shell.args are passed unmodified as arguments to the shell.
+#shell:
+#  program: /bin/bash
+#  args:
+#    - --login
 
