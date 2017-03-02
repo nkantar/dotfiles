@@ -47,36 +47,36 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: false
 
-# Colors (Dracula)
+# Colors (Taerminal)
 colors:
   # Default colors
   primary:
-    background: '0x282a36'
-    foreground: '0xf8f8f2'
+    background: '0x26282a'
+    foreground: '0xf0f0f0'
   cursor:
-    background: '0x282a36'
-    foreground: '0xf8f8f2'
+    cursor: '0xf0f0f0'
+    text: '0x26282a'
 
   # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xff5555'
-    green:   '0x50fa7b'
-    yellow:  '0xf1fa8c'
-    blue:    '0x6272a4'
-    magenta: '0xff79c6'  # pink
-    cyan:    '0x8be9fd'
-    white:   '0xffffff'
+    black:   '0x26282a'
+    red:     '0xff8878'
+    green:   '0xb4fb73'
+    yellow:  '0xfffcb7'
+    blue:    '0x8bbce5'
+    magenta: '0xffb2fe'
+    cyan:    '0xa2e1f8'
+    white:   '0xf1f1f1'
 
-  # Bright colors (same as normal for the time being)
+  # Bright colors
   bright:
-    black:   '0x000000'
-    red:     '0xff5555'
-    green:   '0x50fa7b'
-    yellow:  '0xf1fa8c'
-    blue:    '0x6272a4'
-    magenta: '0xff79c6'  # pink
-    cyan:    '0x8be9fd'
+    black:   '0x6f6f6f'
+    red:     '0xfe978b'
+    green:   '0xd6fcba'
+    yellow:  '0xfffed5'
+    blue:    '0xc2e3ff'
+    magenta: '0xffc6ff'
+    cyan:    '0xc0e9f8'
     white:   '0xffffff'
 
 
