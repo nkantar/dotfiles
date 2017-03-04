@@ -31,28 +31,14 @@ Plug 'nkantar/GHT.vim'
 "Plug 'terryma/vim-multiple-cursors'
 "Plug 'elixir-lang/vim-elixir'
 "Plug 'lambdatoast/elm.vim'
-"Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
 "Plug 'junegunn/limelight.vim'
 
-"Plug 'nkantar/ripgrep.vim'
-
-" Colorschemes
-"Plug 'cocopon/iceberg.vim'
-"Plug 'dracula/vim'
-Plug 'sjl/badwolf'
-"Plug 'fneu/breezy'
-Plug 'robertmeta/nofrils'
-Plug 'nkantar/vim-colors-off'
-
 Plug 'danilo-augusto/vim-afterglow'
+Plug 'reedes/vim-colors-pencil'
 
 "Plug 'google/yapf'
 "Plug 'python-mode/python-mode'
-
-" Comments are red
-Plug 'nkantar/bloodshot.vim'
-Plug 'nkantar/breezy'
-Plug 'nkantar/iceberg.vim'
 
 call plug#end()
 
@@ -318,7 +304,6 @@ set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
-colorscheme iceberg
 colorscheme afterglow
 
 " for MacVim
