@@ -4,38 +4,36 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'jreybert/vimagit'
-Plug 'junegunn/vim-emoji'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-sneak'
-Plug 'mileszs/ack.vim'
-Plug 'mtth/scratch.vim'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'SirVer/ultisnips'
+Plug 'Valloric/YouCompleteMe'
+Plug 'airblade/vim-gitgutter'
+Plug 'danilo-augusto/vim-afterglow'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'hdima/python-syntax'
+Plug 'jreybert/vimagit'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/vim-emoji'
+Plug 'justinmk/vim-sneak'
+Plug 'mtth/scratch.vim'
+Plug 'nkantar/GHT.vim'
+Plug 'python-rope/ropevim'
+Plug 'reedes/vim-colors-pencil'
+Plug 'rizzatti/dash.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'sjl/badwolf'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
-Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/Css-Pretty'
+
 Plug 'vim-syntastic/syntastic'
 "Plug 'w0rp/ale'
 
-Plug 'vim-scripts/Css-Pretty'
-Plug 'nkantar/GHT.vim'
-
-"Plug 'terryma/vim-multiple-cursors'
-"Plug 'elixir-lang/vim-elixir'
-"Plug 'lambdatoast/elm.vim'
-Plug 'junegunn/goyo.vim'
-"Plug 'junegunn/limelight.vim'
-
-Plug 'danilo-augusto/vim-afterglow'
-Plug 'reedes/vim-colors-pencil'
 
 "Plug 'google/yapf'
 "Plug 'python-mode/python-mode'
@@ -160,7 +158,7 @@ set relativenumber
 set colorcolumn=73,80,100
 set cursorline
 
-set hlsearch
+"set hlsearch
 
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_max_signs = 10000
@@ -251,6 +249,7 @@ nnoremap <C-l> <C-w>l
 nnoremap <Leader>w :write<CR>
 nnoremap <Leader>q :quit<CR>
 nnoremap <Leader>x :xit<CR>
+nnoremap <Leader>e :edit<CR>
 
 " this is apparently not reliable behavior, but it seems to work for now...
 nnoremap <Leader>bda :bufdo bdelete<CR>
@@ -297,7 +296,7 @@ nnoremap <Leader>fc :Commits<CR>
 
 set omnifunc=emoji#complete
 
-"set lazyredraw
+set lazyredraw
 
 set termguicolors
 set background=dark
@@ -306,12 +305,14 @@ set t_8b=[48;2;%lu;%lu;%lum
 
 colorscheme afterglow
 
+set cul!
+
 " for MacVim
 set guioptions=
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 "let g:syntastic_quiet_messages = {
     "\ "!level": "errors",
@@ -352,5 +353,7 @@ let g:sneak#label = 1
 
 call HighlightPythonDocstringsAsComments()
 
-"set listchars=space:␣,eol:¬
-"set list
+let g:ropevim_global_prefix = '<Leader>rp'
+let g:ropevim_local_prefix = '<Leader>rr'
+
+let g:ale_linters = { 'python': ['flake8'], }
