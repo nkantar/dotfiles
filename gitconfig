@@ -45,3 +45,5 @@
 
     ld = log HEAD~1..HEAD --pretty="%H"
 
+    sw = sweep
+    fr = fire
