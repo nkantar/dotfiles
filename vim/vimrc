@@ -34,6 +34,9 @@ Plug 'vim-scripts/Css-Pretty'
 Plug 'vim-syntastic/syntastic'
 "Plug 'w0rp/ale'
 
+Plug 'morhetz/gruvbox'
+Plug 'zeis/vim-kolor'
+Plug 'mkarmona/colorsbox'
 
 "Plug 'google/yapf'
 "Plug 'python-mode/python-mode'
@@ -303,9 +306,15 @@ set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
-colorscheme afterglow
+"colorscheme pencil
+"colorscheme BadWolf
+"colorscheme GoodWolf
+"colorscheme afterglow
+colorscheme gruvbox
+"colorscheme kolor
+"colorscheme colorsbox-stnight
 
-set cul!
+set nocul
 
 " for MacVim
 set guioptions=
@@ -357,3 +366,5 @@ let g:ropevim_global_prefix = '<Leader>rp'
 let g:ropevim_local_prefix = '<Leader>rr'
 
 let g:ale_linters = { 'python': ['flake8'], }
+
+autocmd FileType qf set colorcolumn=
