@@ -25,20 +25,22 @@
     pso = push origin
     psom = push origin master
     br = branch
-    st = status
+    sh = show
+    st = stash
     ss = status --short
-    stu = status -uno
     ssu = status --short -uno
     di = diff
-    l = log
-    lg = log --pretty=\"%h  %<(16)%C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
+    m = merge
+    rb = rebase
+    rv = revert
+
     ;lg = log --pretty=\"%h  %<($(git log --pretty="%an" | sort -ug | wc -c))%C(yellow)%an%Creset %Cblue%ar%Creset  %s\"
     unstage = reset HEAD
 
     ru = remote update
-    c = commit --verbose
-    am = commit --amend
-    l = log --pretty=\"%h  %C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
+    am = commit --verbose --amend
+    ;l = log --pretty=\"%h  %C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
+    l = log --pretty=\"%h  %<(16)%C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
     dic = diff --cached
 
     ld = log HEAD~1..HEAD --pretty="%H"
