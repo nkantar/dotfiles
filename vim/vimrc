@@ -19,11 +19,13 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'justinmk/vim-sneak'
+Plug 'metakirby5/codi.vim'
 Plug 'mtth/scratch.vim'
 Plug 'nkantar/GHT.vim'
 Plug 'python-rope/ropevim'
 Plug 'reedes/vim-colors-pencil'
 Plug 'rizzatti/dash.vim'
+Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sjl/badwolf'
 Plug 'tpope/vim-fugitive'
@@ -181,9 +183,7 @@ set laststatus=2
 
 set statusline=
 
-"set statusline+=%1*%{expand('%:h')}/%*
-"set statusline+=%t
-set statusline+=%F
+set statusline+=%f
 set statusline+=\ 
 set statusline+=%y  " filetype
 set statusline+=\ 
