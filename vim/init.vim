@@ -1,0 +1,1 @@
+/Users/nkantar/.config/nvim/vimrc

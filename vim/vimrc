@@ -32,6 +32,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/Css-Pretty'
+Plug 'tpope/vim-markdown'
 
 Plug 'vim-syntastic/syntastic'
 "Plug 'w0rp/ale'
@@ -39,6 +40,9 @@ Plug 'vim-syntastic/syntastic'
 Plug 'morhetz/gruvbox'
 Plug 'zeis/vim-kolor'
 Plug 'mkarmona/colorsbox'
+
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
 
 "Plug 'google/yapf'
 "Plug 'python-mode/python-mode'
@@ -368,3 +372,9 @@ let g:ropevim_local_prefix = '<Leader>rr'
 let g:ale_linters = { 'python': ['flake8'], }
 
 autocmd FileType qf set colorcolumn=
+
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+
+"augroup autoformat_settings
+    "autocmd FileType python AutoFormatBuffer yapf
+"augroup END
