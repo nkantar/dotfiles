@@ -9,7 +9,6 @@ Plug 'Shougo/vimfiler.vim'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
-Plug 'danilo-augusto/vim-afterglow'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'hdima/python-syntax'
 Plug 'jreybert/vimagit'
@@ -23,23 +22,21 @@ Plug 'metakirby5/codi.vim'
 Plug 'mtth/scratch.vim'
 Plug 'nkantar/GHT.vim'
 Plug 'python-rope/ropevim'
-Plug 'reedes/vim-colors-pencil'
 Plug 'rizzatti/dash.vim'
 Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdcommenter'
-Plug 'sjl/badwolf'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/Css-Pretty'
-Plug 'tpope/vim-markdown'
+Plug 'w0rp/ale'
 
-Plug 'vim-syntastic/syntastic'
-"Plug 'w0rp/ale'
-
+Plug 'sjl/badwolf'
+Plug 'reedes/vim-colors-pencil'
 Plug 'morhetz/gruvbox'
-Plug 'zeis/vim-kolor'
-Plug 'mkarmona/colorsbox'
+Plug 'rakr/vim-one'
+Plug 'whatyouhide/vim-gotham'
 
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
@@ -183,8 +180,6 @@ endfunction
 
 set laststatus=2
 
-"hi User1 ctermfg=240 ctermbg=236 cterm=bold
-
 set statusline=
 
 set statusline+=%f
@@ -195,6 +190,9 @@ set statusline+=%m  " modified flag
 set statusline+=\ 
 
 set statusline+=%=  " right-align from now on
+
+set statusline+=[%{ALEGetStatusLine()}]
+set statusline+=\ 
 
 set statusline+=%{PasteForStatusline()}
 
@@ -208,15 +206,18 @@ set statusline+=%L  " row total
 set statusline+=\ 
 set statusline+=%{winnr()}
 
-hi StatusLine ctermfg=248 ctermbg=236
-hi StatusLineNC ctermfg=240 ctermbg=236
-
 function! HighlightPythonDocstringsAsComments()
     syn region Comment start=/"""/ end=/"""/
 endfunction
 
+function! HighlightVimComments()
+    syn region Comment start=/"/ end=/$/
+endfunction
+
 au BufReadPost *.py call HighlightPythonDocstringsAsComments()
 autocmd Filetype python call HighlightPythonDocstringsAsComments()
+
+autocmd Filetype vim call HighlightVimComments()
 
 "autocmd Filetype ruby call SetRubyOptions()
 "function SetRubyOptions()
@@ -313,10 +314,9 @@ set t_8b=[48;2;%lu;%lu;%lum
 "colorscheme pencil
 "colorscheme BadWolf
 "colorscheme GoodWolf
-"colorscheme afterglow
-colorscheme gruvbox
-"colorscheme kolor
-"colorscheme colorsbox-stnight
+"colorscheme gruvbox
+"colorscheme gotham
+colorscheme one
 
 set nocul
 
@@ -327,18 +327,7 @@ set guioptions=
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 
-"let g:syntastic_quiet_messages = {
-    "\ "!level": "errors",
-    "\ "type": "style" }
-
 let $FZF_DEFAULT_COMMAND='ag -g ""'
-
-let g:syntastic_python_checkers = ['python', 'flake8']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_flake8_args='--ignore=E1,E2,E3,E4,E5,E6,E7,E8,E9,W1,W2,W3,W4,W5,W6,W7,W8,W9'
 
 let python_highlight_all=1
 
@@ -350,26 +339,32 @@ set t_ZR=[23m
 
 set noeol
 
-function! JotDown(param)
-    exec ":! ~/bin/jotdown" shellescape(a:param)
-endfunction
-command! -nargs=1 JD call JotDown(<f-args>)
-nnoremap <Leader>jd :JD<Space>
-
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
 set t_Co=256
-let base16colorspace=256
 let g:sneak#label = 1
 
 "set nofoldenable    " disable folding
 
 call HighlightPythonDocstringsAsComments()
+call HighlightVimComments()
 
 let g:ropevim_global_prefix = '<Leader>rp'
 let g:ropevim_local_prefix = '<Leader>rr'
 
+set nocompatible
+filetype off
+let &runtimepath.=',~/.vim/bundle/ale'
+filetype plugin on
 let g:ale_linters = { 'python': ['flake8'], }
+let g:ale_sign_column_always = 1
+let g:ale_statusline_format = ['x %d', '! %d', 'OK']
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
 
 autocmd FileType qf set colorcolumn=
 
@@ -378,3 +373,4 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 "augroup autoformat_settings
     "autocmd FileType python AutoFormatBuffer yapf
 "augroup END
+
