@@ -38,6 +38,8 @@ Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'whatyouhide/vim-gotham'
 
+Plug 'mhinz/vim-startify'
+
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 
