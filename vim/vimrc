@@ -325,10 +325,6 @@ set nocul
 " for MacVim
 set guioptions=
 
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
 let $FZF_DEFAULT_COMMAND='ag -g ""'
 
 let python_highlight_all=1
