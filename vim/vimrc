@@ -221,13 +221,6 @@ autocmd Filetype python call HighlightPythonDocstringsAsComments()
 
 autocmd Filetype vim call HighlightVimComments()
 
-"autocmd Filetype ruby call SetRubyOptions()
-"function SetRubyOptions()
-    "setlocal ts=2
-    "...
-"endfunction
-
-
 "==================================================
 " Keymappings
 "-------------------------
