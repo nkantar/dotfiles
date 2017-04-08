@@ -208,12 +208,8 @@ set statusline+=%L  " row total
 set statusline+=\ 
 set statusline+=%{winnr()}
 
-function! HighlightPythonDocstringsAsComments()
-    syn region Comment start=/"""/ end=/"""/
-endfunction
-
-function! HighlightVimComments()
-    syn region Comment start=/"/ end=/$/
+function! StripTrailingWhitespace()
+    execute '%s/\s\+$//g'
 endfunction
 
 au BufReadPost *.py call HighlightPythonDocstringsAsComments()
@@ -336,6 +332,14 @@ set t_Co=256
 let g:sneak#label = 1
 
 "set nofoldenable    " disable folding
+
+function! HighlightPythonDocstringsAsComments()
+    syn region Comment start=/"""/ end=/"""/
+endfunction
+
+function! HighlightVimComments()
+    syn region Comment start=/"/ end=/$/
+endfunction
 
 call HighlightPythonDocstringsAsComments()
 call HighlightVimComments()
