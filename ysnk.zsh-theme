@@ -14,12 +14,12 @@ venv_prompt_info() {
 }
 
 local host_info='$(host_prompt_info)'
-HOST="${HOSTNAME%%.*} ($(uname))"
+HOST="$(hostname -s) ($(uname))"
 host_prompt_info() {
     if [ -n "$SSH_CLIENT" ]; then
         HOST="$HOST [r]"
-        echo -n "$HOST"
     fi
+    echo -n "$HOST"
 }
 
 # VCS
