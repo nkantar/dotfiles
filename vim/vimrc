@@ -38,6 +38,8 @@ Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'whatyouhide/vim-gotham'
 
+Plug 'mhinz/vim-startify'
+
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 
@@ -206,25 +208,14 @@ set statusline+=%L  " row total
 set statusline+=\ 
 set statusline+=%{winnr()}
 
-function! HighlightPythonDocstringsAsComments()
-    syn region Comment start=/"""/ end=/"""/
-endfunction
-
-function! HighlightVimComments()
-    syn region Comment start=/"/ end=/$/
+function! StripTrailingWhitespace()
+    execute '%s/\s\+$//g'
 endfunction
 
 au BufReadPost *.py call HighlightPythonDocstringsAsComments()
 autocmd Filetype python call HighlightPythonDocstringsAsComments()
 
 autocmd Filetype vim call HighlightVimComments()
-
-"autocmd Filetype ruby call SetRubyOptions()
-"function SetRubyOptions()
-    "setlocal ts=2
-    "...
-"endfunction
-
 
 "==================================================
 " Keymappings
@@ -323,10 +314,6 @@ set nocul
 " for MacVim
 set guioptions=
 
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
 let $FZF_DEFAULT_COMMAND='ag -g ""'
 
 let python_highlight_all=1
@@ -345,6 +332,14 @@ set t_Co=256
 let g:sneak#label = 1
 
 "set nofoldenable    " disable folding
+
+function! HighlightPythonDocstringsAsComments()
+    syn region Comment start=/"""/ end=/"""/
+endfunction
+
+function! HighlightVimComments()
+    syn region Comment start=/"/ end=/$/
+endfunction
 
 call HighlightPythonDocstringsAsComments()
 call HighlightVimComments()
@@ -365,6 +360,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
+let g:ale_keep_list_window_open = 1
 
 autocmd FileType qf set colorcolumn=
 
