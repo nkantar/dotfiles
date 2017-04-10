@@ -13,6 +13,15 @@ venv_prompt_info() {
     fi
 }
 
+local host_info='$(host_prompt_info)'
+HOST="${HOSTNAME%%.*} ($(uname))"
+host_prompt_info() {
+    if [ -n "$SSH_CLIENT" ]; then
+        HOST="$HOST [r]"
+        echo -n "$HOST"
+    fi
+}
+
 # VCS
 YS_VCS_PROMPT_PREFIX1=" %{$fg[white]%}on%{$reset_color%} "
 YS_VCS_PROMPT_PREFIX2=":%{$fg[cyan]%}"
@@ -59,7 +68,7 @@ PROMPT="
 ${venv_info}\
 %(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
 %{$fg[white]%}@ \
-%{$fg[blue]%}%m ($(uname)) \
+%{$fg[blue]%}${host_info} \
 %{$fg[white]%}in \
 %{$fg[green]%}%~%{$reset_color%}\
 ${hg_info}\
