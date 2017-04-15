@@ -33,6 +33,7 @@
     m = merge
     rb = rebase
     rv = revert
+    rs = reset
 
     ;lg = log --pretty=\"%h  %<($(git log --pretty="%an" | sort -ug | wc -c))%C(yellow)%an%Creset %Cblue%ar%Creset  %s\"
     unstage = reset HEAD
