@@ -146,14 +146,6 @@ set nobackup                      " No backups.
 set nowritebackup                 " No backups.
 "set noswapfile                    " No swap files; more hassle than they're worth. | Actually...
 
-" Source: http://stackoverflow.com/a/6404246/151007
-let i = 1
-" If I have more than 9 windows open I have bigger problems :)
-while i <= 9
-  execute 'nnoremap <Leader>'.i.' :'.i.'wincmd w<CR>'
-  let i = i + 1
-endwhile
-
 
 "==================================================
 " Appearance
@@ -166,7 +158,8 @@ set relativenumber
 set colorcolumn=73,80,100
 set cursorline
 
-"set hlsearch
+set hlsearch
+noh
 
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_max_signs = 10000
@@ -174,7 +167,16 @@ let g:gitgutter_max_signs = 10000
 function! PasteForStatusline()
     let paste_status = &paste
     if paste_status == 1
-        return " [paste] "
+        return "[p]"
+    else
+        return ""
+    endif
+endfunction
+
+function! ReadonlyForStatusline()
+    let readonly_status = &readonly
+    if readonly_status == 1
+        return "[!]"
     else
         return ""
     endif
@@ -184,29 +186,17 @@ set laststatus=2
 
 set statusline=
 
-set statusline+=%f
+set statusline+=%F                          " file path
 set statusline+=\ 
-set statusline+=%y  " filetype
+set statusline+=%{ReadonlyForStatusline()}  " readonly ([!])
 set statusline+=\ 
-set statusline+=%m  " modified flag
-set statusline+=\ 
+set statusline+=%m                          " modified ([+])
 
-set statusline+=%=  " right-align from now on
+set statusline+=%=                          " right-align from here
 
-set statusline+=[%{ALEGetStatusLine()}]
+set statusline+=%{PasteForStatusline()}     " paste ([p])
 set statusline+=\ 
-
-set statusline+=%{PasteForStatusline()}
-
-set statusline+=\[%{mode()}\]
-set statusline+=\ 
-set statusline+=%v  " column number
-set statusline+=\:
-set statusline+=%l  " row number
-set statusline+=\/
-set statusline+=%L  " row total
-set statusline+=\ 
-set statusline+=%{winnr()}
+set statusline+=[%{ALEGetStatusLine()}]     " ALE
 
 function! StripTrailingWhitespace()
     execute '%s/\s\+$//g'
@@ -357,10 +347,8 @@ let g:ale_statusline_format = ['x %d', '! %d', 'OK']
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-let g:ale_open_list = 1
-let g:ale_keep_list_window_open = 1
+"let g:ale_set_loclist = 1
+"let g:ale_open_list = 1
 
 autocmd FileType qf set colorcolumn=
 
@@ -369,4 +357,6 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 "augroup autoformat_settings
     "autocmd FileType python AutoFormatBuffer yapf
 "augroup END
+
+let g:startify_change_to_dir = 0
 
