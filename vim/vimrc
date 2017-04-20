@@ -21,15 +21,17 @@ Plug 'justinmk/vim-sneak'
 Plug 'metakirby5/codi.vim'
 Plug 'mtth/scratch.vim'
 Plug 'nkantar/GHT.vim'
+Plug 'nkantar/SPI.vim'
 Plug 'python-rope/ropevim'
 Plug 'rizzatti/dash.vim'
 Plug 'sbdchd/neoformat'
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/Css-Pretty'
+Plug 'mhinz/vim-startify'
 Plug 'w0rp/ale'
 
 Plug 'sjl/badwolf'
@@ -37,8 +39,6 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'whatyouhide/vim-gotham'
-
-Plug 'mhinz/vim-startify'
 
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
@@ -295,9 +295,9 @@ set t_8b=[48;2;%lu;%lu;%lum
 "colorscheme pencil
 "colorscheme BadWolf
 "colorscheme GoodWolf
-"colorscheme gruvbox
+colorscheme gruvbox
 "colorscheme gotham
-colorscheme one
+"colorscheme one
 
 set nocul
 
@@ -343,7 +343,7 @@ let &runtimepath.=',~/.vim/bundle/ale'
 filetype plugin on
 let g:ale_linters = { 'python': ['flake8'], }
 let g:ale_sign_column_always = 1
-let g:ale_statusline_format = ['x %d', '! %d', 'OK']
+let g:ale_statusline_format = ['x%d', '!%d', 'OK']
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
