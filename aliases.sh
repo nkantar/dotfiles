@@ -23,16 +23,15 @@ alias agj="ag --js"
 
 # applications
 
+alias dcmp='docker-compose'
+alias g='git'
+alias nv='nvim'
+alias p3='python3'
+alias p='python'
 alias v='vim'
 alias va='vagrant'
-alias g='git'
-alias p='python'
-alias p3='python3'
-alias ve='virtualenv'
 alias ve3='python3 -m venv'
-alias dcmp='docker-compose'
-
-alias jd='jotdown'
+alias ve='virtualenv'
 
 alias ccat='pygmentize -O style=monokai -f console256 -g'
 cless() { ccat $1 | less }
