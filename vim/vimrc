@@ -34,11 +34,7 @@ Plug 'vim-scripts/Css-Pretty'
 Plug 'mhinz/vim-startify'
 Plug 'w0rp/ale'
 
-Plug 'sjl/badwolf'
-Plug 'reedes/vim-colors-pencil'
 Plug 'morhetz/gruvbox'
-Plug 'rakr/vim-one'
-Plug 'whatyouhide/vim-gotham'
 
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-commentary'
@@ -140,7 +136,8 @@ let g:UltiSnipsExpandTrigger='<c-\>'
 
 set completeopt-=preview
 
-set shell=zsh\ -l
+" set shell=zsh\ -l
+
 
 set shortmess+=c
 
@@ -185,6 +182,15 @@ function! ReadonlyForStatusline()
     endif
 endfunction
 
+function! GitBranchForStatusline()
+    let branch = fugitive#head()
+    if branch != ""
+        return "[" . fugitive#head() . "]"
+    else
+        return ""
+    endif
+endfunction
+
 set laststatus=2
 
 set statusline=
@@ -196,6 +202,8 @@ set statusline+=\
 set statusline+=%m                          " modified ([+])
 
 set statusline+=%=                          " right-align from here
+
+set statusline+=%{GitBranchForStatusline()} " Git branch
 
 set statusline+=%{PasteForStatusline()}     " paste ([p])
 set statusline+=\ 
@@ -295,12 +303,7 @@ set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
-"colorscheme pencil
-"colorscheme BadWolf
-"colorscheme GoodWolf
 colorscheme gruvbox
-"colorscheme gotham
-"colorscheme one
 
 set nocul
 
@@ -321,7 +324,6 @@ set noeol
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
-set t_Co=256
 let g:sneak#label = 1
 
 "set nofoldenable    " disable folding
@@ -363,3 +365,18 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 
 let g:startify_change_to_dir = 0
 
+set guifont=Mononoki:h13
+if has("gui_macvim")
+    set lines=48 columns=120
+endif
+
+set incsearch
+
+function! g:CDSL()
+    exec "cd ~/Projects/SimpleLegal"
+endfunction
+command! CDSL call CDSL()
+
+command! Q quit
+
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
