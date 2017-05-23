@@ -102,3 +102,4 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
