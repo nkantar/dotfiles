@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Clear macOS clipboard by putting an empty string in it
+echo "" | pbcopy
