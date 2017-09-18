@@ -24,6 +24,7 @@
     ps = push
     pso = push origin
     psom = push origin master
+    pst = push --tags
     br = branch
     sh = show
     st = stash
