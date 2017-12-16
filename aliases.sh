@@ -12,14 +12,22 @@ alias cll="cls && ls -l"
 
 #alias cdg="cd `git rev-parse --show-toplevel`"
 
-alias cdsl="cd ~/Projects/SimpleLegal"
-alias cdeb="cd ~/Projects/SimpleLegal/ebill"
-alias cdvp="cd ~/Projects/SimpleLegal/vendorportal"
-alias slv="cd ~/Projects/SimpleLegal && vim ."
+alias cdapps="cd ~/Projects/apps"
+alias cddevops="cd ~/Projects/devops"
+alias cddocs="cd ~/Projects/devdocs"
+
+alias bpg="pg_ctl -D /usr/local/var/postgres"
 
 alias agp="ag --python"
 alias agh="ag --html"
 alias agj="ag --js"
+
+alias rgp="rg -t py"
+alias rgh="rg -t html"
+alias rgj="rg -t js"
+
+alias tarc="tar -cvzf"
+alias tarx="tar -xvzf"
 
 # applications
 

@@ -1,5 +1,9 @@
 snippet pdb
 	import pdb; pdb.set_trace()  # TODO: Nik - remove
+snippet rpdb
+	from remote_pdb import RemotePdb; RemotePdb('127.0.0.1', 4444).set_trace()  # TODO: Nik - remove
+snippet exit
+	import sys; sys.exit()  # TODO: Nik - remove
 snippet pprint
 	import pprint; pprint.PrettyPrinter(indent=4, width=100).pprint(${1})  # TODO: Nik - remove
 snippet print
@@ -7,6 +11,6 @@ snippet print
 snippet pass
 	pass  # TODO: Nik - remove
 snippet sep
-	print('--------------------------------------------------')  # TODO: Nik - remove
+	print('*-'*50)  # TODO: Nik - remove
 snippet rem
 	# TODO: Nik - remove

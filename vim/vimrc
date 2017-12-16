@@ -10,6 +10,7 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ferranpm/vim-isolate'
 Plug 'hdima/python-syntax'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -22,7 +23,7 @@ Plug 'metakirby5/codi.vim'
 Plug 'mtth/scratch.vim'
 Plug 'nkantar/GHT.vim'
 Plug 'nkantar/SPI.vim'
-Plug 'python-rope/ropevim'
+" Plug 'python-rope/ropevim'
 Plug 'rizzatti/dash.vim'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-commentary'
@@ -39,8 +40,17 @@ Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-commentary'
 
+Plug 'rhysd/devdocs.vim'
+
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
+
+Plug 'robertmeta/nofrils'
+Plug 'sjl/badwolf'
+Plug 'sstallion/vim-wtf'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'cocopon/iceberg.vim'
+Plug 'roosta/vim-srcery'
 
 "Plug 'google/yapf'
 "Plug 'python-mode/python-mode'
@@ -117,7 +127,7 @@ set laststatus=2
 set autoindent
 set nosmartindent
 
-set scrolloff=25
+set scrolloff=15
 
 set autoread
 
@@ -155,7 +165,7 @@ set nocompatible              " be iMproved, required
 syntax on
 set number
 set relativenumber
-set colorcolumn=73,80,100
+set colorcolumn=73,80,100,120
 set cursorline
 
 set hlsearch
@@ -289,6 +299,9 @@ nnoremap <Leader>fl :noh<CR>
 nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader>fc :Commits<CR>
 
+" Startify
+nnoremap <Leader>st :Startify<CR>
+
 
 "==================================================
 " Temporary (Insanity)
@@ -303,19 +316,41 @@ set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
-colorscheme gruvbox
+" colorscheme gruvbox
+" colorscheme nofrils-dark
+" colorscheme BadWolf
+" colorscheme GoodWolf
+" colorscheme wtf
+" colorscheme PaperColor
+" colorscheme mininik
+" colorscheme srcery
+" colorscheme iceberg
+colorscheme toothpaste
+
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default': {
+  \       'allow_bold': 1,
+  \       'allow_italic': 1,
+  \       'transparent_background': 0
+  \     }
+  \   },
+  \   'language': {
+  \     'python': {
+  \       'highlight_builtins' : 1
+  \     }
+  \   }
+  \ }
 
 set nocul
 
 " for MacVim
 set guioptions=
 
-let $FZF_DEFAULT_COMMAND='ag -g ""'
-
 let python_highlight_all=1
 
-highlight Comment cterm=italic
-hi! Comment ctermfg=255 guifg=#ffffff
+hi! Comment cterm=italic ctermfg=255 guifg=#ffffff
+hi! Todo cterm=italic ctermfg=0 ctermbg=255 guifg=#000000 guibg=#ffffff
 
 set t_ZH=[3m
 set t_ZR=[23m
@@ -379,4 +414,5 @@ command! CDSL call CDSL()
 
 command! Q quit
 
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+" command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+
