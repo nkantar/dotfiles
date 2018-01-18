@@ -23,7 +23,6 @@ Plug 'metakirby5/codi.vim'
 Plug 'mtth/scratch.vim'
 Plug 'nkantar/GHT.vim'
 Plug 'nkantar/SPI.vim'
-" Plug 'python-rope/ropevim'
 Plug 'rizzatti/dash.vim'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-commentary'
@@ -34,26 +33,18 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/Css-Pretty'
 Plug 'mhinz/vim-startify'
 Plug 'w0rp/ale'
-
-Plug 'morhetz/gruvbox'
-
-Plug 'mhinz/vim-startify'
-Plug 'tpope/vim-commentary'
-
+Plug 'Yggdroot/indentLine'
 Plug 'rhysd/devdocs.vim'
 
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
-
-Plug 'robertmeta/nofrils'
-Plug 'sjl/badwolf'
-Plug 'sstallion/vim-wtf'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'cocopon/iceberg.vim'
-Plug 'roosta/vim-srcery'
-
 "Plug 'google/yapf'
 "Plug 'python-mode/python-mode'
+
+Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
+
+" Plug 'python-rope/ropevim'
 
 call plug#end()
 
@@ -68,50 +59,6 @@ set wildignore+=*.pyc
 set backupskip=/tmp/*,/private/tmp/*
 
 let b:current_syntax = "gitconfig-local"
-
-
-"==================================================
-" Google
-"-------------------------
-
-" Indent Python in the Google way.
-" https://google.github.io/styleguide/pyguide.html
-
-setlocal indentexpr=GetGooglePythonIndent(v:lnum)
-
-let s:maxoff = 50 " maximum number of lines to look backwards.
-
-" Commented out for the time being
-"function! GetGooglePythonIndent(lnum)
-
-  "" Indent inside parens.
-  "" Align with the open paren unless it is at the end of the line.
-  "" E.g.
-  ""   open_paren_not_at_EOL(100,
-  ""                         (200,
-  ""                          300),
-  ""                         400)
-  ""   open_paren_at_EOL(
-  ""       100, 200, 300, 400)
-  "call cursor(a:lnum, 1)
-  "let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
-        "\ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
-        "\ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
-        "\ . " =~ '\\(Comment\\|String\\)$'")
-  "if par_line > 0
-    "call cursor(par_line, 1)
-    "if par_col != col("$") - 1
-      "return par_col
-    "endif
-  "endif
-
-  "" Delegate the rest to the original function.
-  "return GetPythonIndent(a:lnum)
-
-"endfunction
-
-"let pyindent_nested_paren="&sw*2"
-"let pyindent_open_paren="&sw*2"
 
 
 "==================================================
@@ -142,14 +89,25 @@ set updatetime=250
 " make backspace work like most other apps
 set backspace=2
 
-let g:UltiSnipsExpandTrigger='<c-\>'
-
 set completeopt-=preview
 
 " set shell=zsh\ -l
 
-
 set shortmess+=c
+
+set incsearch
+
+set lazyredraw
+
+set noeol
+
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
+
+set t_ZH=[3m
+set t_ZR=[23m
+
+autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " from https://github.com/airblade/dotvim/blob/dd5d7737e39aad5e24c1a4a8c0d115ff2ae7b488/vimrc#L109-L111
 set nobackup                      " No backups.
@@ -228,6 +186,29 @@ autocmd Filetype python call HighlightPythonDocstringsAsComments()
 
 autocmd Filetype vim call HighlightVimComments()
 
+autocmd Filetype qf set colorcolumn=
+
+" colors
+set termguicolors
+set background=dark
+" colorscheme gruvbox
+let ayucolor="mirage"
+colorscheme Ayu
+
+hi! Comment cterm=italic ctermfg=255 guifg=#ffffff
+hi! Todo cterm=italic ctermfg=0 ctermbg=255 guifg=#000000 guibg=#ffffff
+
+function! HighlightPythonDocstringsAsComments()
+    syn region Comment start=/"""/ end=/"""/
+endfunction
+
+function! HighlightVimComments()
+    syn region Comment start=/"/ end=/$/
+endfunction
+
+call HighlightPythonDocstringsAsComments()
+call HighlightVimComments()
+
 "==================================================
 " Keymappings
 "-------------------------
@@ -299,85 +280,24 @@ nnoremap <Leader>fl :noh<CR>
 nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader>fc :Commits<CR>
 
-" Startify
-nnoremap <Leader>st :Startify<CR>
+" tyop (aka slow fingers)
+command! Q quit
 
 
 "==================================================
-" Temporary (Insanity)
+" Plugin config
 "-------------------------
 
-set omnifunc=emoji#complete
+" mhinz/vim-startify
+let g:startify_change_to_dir = 0
 
-set lazyredraw
+" SirVer/ultisnips
+let g:UltiSnipsExpandTrigger='<c-\>'
 
-set termguicolors
-set background=dark
-set t_8f=[38;2;%lu;%lu;%lum
-set t_8b=[48;2;%lu;%lu;%lum
+" tpope/vim-markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 
-" colorscheme gruvbox
-" colorscheme nofrils-dark
-" colorscheme BadWolf
-" colorscheme GoodWolf
-" colorscheme wtf
-" colorscheme PaperColor
-" colorscheme mininik
-" colorscheme srcery
-" colorscheme iceberg
-colorscheme toothpaste
-
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default': {
-  \       'allow_bold': 1,
-  \       'allow_italic': 1,
-  \       'transparent_background': 0
-  \     }
-  \   },
-  \   'language': {
-  \     'python': {
-  \       'highlight_builtins' : 1
-  \     }
-  \   }
-  \ }
-
-set nocul
-
-" for MacVim
-set guioptions=
-
-let python_highlight_all=1
-
-hi! Comment cterm=italic ctermfg=255 guifg=#ffffff
-hi! Todo cterm=italic ctermfg=0 ctermbg=255 guifg=#000000 guibg=#ffffff
-
-set t_ZH=[3m
-set t_ZR=[23m
-
-set noeol
-
-autocmd Filetype gitcommit setlocal spell textwidth=72
-
-let g:sneak#label = 1
-
-"set nofoldenable    " disable folding
-
-function! HighlightPythonDocstringsAsComments()
-    syn region Comment start=/"""/ end=/"""/
-endfunction
-
-function! HighlightVimComments()
-    syn region Comment start=/"/ end=/$/
-endfunction
-
-call HighlightPythonDocstringsAsComments()
-call HighlightVimComments()
-
-let g:ropevim_global_prefix = '<Leader>rp'
-let g:ropevim_local_prefix = '<Leader>rr'
-
-set nocompatible
+" w0rp/ale
 filetype off
 let &runtimepath.=',~/.vim/bundle/ale'
 filetype plugin on
@@ -387,32 +307,15 @@ let g:ale_statusline_format = ['x%d', '!%d', 'OK']
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-"let g:ale_set_loclist = 1
-"let g:ale_open_list = 1
+let g:ale_set_loclist = 1
+let g:ale_open_list = 1
 
-autocmd FileType qf set colorcolumn=
+" justinmk/vim-sneak
+let g:sneak#label = 1
 
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+" hdima/python-syntax
+let python_highlight_all=1
 
-"augroup autoformat_settings
-    "autocmd FileType python AutoFormatBuffer yapf
-"augroup END
-
-let g:startify_change_to_dir = 0
-
-set guifont=Mononoki:h13
-if has("gui_macvim")
-    set lines=48 columns=120
-endif
-
-set incsearch
-
-function! g:CDSL()
-    exec "cd ~/Projects/SimpleLegal"
-endfunction
-command! CDSL call CDSL()
-
-command! Q quit
-
-" command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
-
+" python-rope/ropevim
+let g:ropevim_global_prefix = '<Leader>rp'
+let g:ropevim_local_prefix = '<Leader>rr'
