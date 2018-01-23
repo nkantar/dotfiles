@@ -216,8 +216,6 @@ set nocursorcolumn
 " Keymappings
 "-------------------------
 
-" <C-c> over Esc
-inoremap <Esc> <Nop>
 " spacebar makes for a great leader key
 nnoremap <Space> <Nop>
 map <Space> <Leader>
@@ -225,12 +223,6 @@ map <Space><Space> <Leader><Leader>
 
 " necessary for incessant Vim config updates
 nnoremap <Leader>ss :source $MYVIMRC<CR>
-
-" hjkl over cursor keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
 
 " better movement between splits
 nnoremap <C-j> <C-w>j
@@ -260,12 +252,7 @@ nnoremap <Leader>tc :tabclose<CR>
 nnoremap <Leader>tn :tabnext<CR>
 nnoremap <Leader>tp :tabprevious<CR>
 
-nnoremap <Leader>vm :Vmx 
-command! -nargs=1 Vmx call g:VimuxRunCommand(<f-args>)<CR>
-
-nnoremap <Leader>goyo :Goyo<CR>
-nnoremap <Leader>lime :Limelight<CR>
-
+" filetype syntax shortcuts
 nnoremap <Leader>md :set syntax=markdown<CR>:set filetype=markdown<CR>
 nnoremap <Leader>py :set syntax=python<CR>:set filetype=python<CR>
 nnoremap <Leader>js :set syntax=javascript<CR>:set filetype=javascript<CR>
@@ -274,13 +261,20 @@ nnoremap <Leader>hd :set syntax=htmldjango<CR>:set filetype=htmldjango<CR>
 nnoremap <Leader>sh :set syntax=sh<CR>:set filetype=sh<CR>
 
 " find TODO comments
-nnoremap <Leader>fr /TODO\:\ Nik\ \-\ remove<CR>
-nnoremap <Leader>fn /TODO\:\ Nik<CR>
-nnoremap <Leader>fl :noh<CR>
+nnoremap <Leader>td /TODO<CR>
+
+" clear find highlights
+nnoremap <Leader>nh :noh<CR>
 
 " fzf
 nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader>fc :Commits<CR>
+nnoremap <Leader>ft :Tags<CR>
+nnoremap <Leader>fb :BTags<CR>
+nnoremap <Leader>fl :BLines<CR>
+
+" Vimagit
+nnoremap <Leader>mg :Magit<CR>
 
 " tyop (aka slow fingers)
 command! Q quit
