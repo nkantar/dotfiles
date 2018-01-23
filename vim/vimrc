@@ -195,8 +195,8 @@ set background=dark
 let ayucolor="mirage"
 colorscheme Ayu
 
-hi! Comment cterm=italic ctermfg=255 guifg=#ffffff
-hi! Todo cterm=italic ctermfg=0 ctermbg=255 guifg=#000000 guibg=#ffffff
+hi! Comment cterm=italic ctermfg=255             guifg=#ffffff
+hi! Todo    cterm=italic ctermfg=0   ctermbg=255 guifg=#000000 guibg=#ffffff
 
 function! HighlightPythonDocstringsAsComments()
     syn region Comment start=/"""/ end=/"""/
@@ -209,13 +209,15 @@ endfunction
 call HighlightPythonDocstringsAsComments()
 call HighlightVimComments()
 
+set nocul
+set nocursorcolumn
+
 "==================================================
 " Keymappings
 "-------------------------
 
 " <C-c> over Esc
 inoremap <Esc> <Nop>
-
 " spacebar makes for a great leader key
 nnoremap <Space> <Nop>
 map <Space> <Leader>
