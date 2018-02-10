@@ -41,6 +41,11 @@ Plug 'google/vim-codefmt'
 "Plug 'google/yapf'
 "Plug 'python-mode/python-mode'
 
+" TypeScript
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'prettier/vim-prettier'
+
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 
