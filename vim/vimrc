@@ -279,7 +279,7 @@ nnoremap <Leader>fb :BTags<CR>
 nnoremap <Leader>fl :BLines<CR>
 
 " Vimagit
-nnoremap <Leader>mg :Magit<CR>
+nnoremap <Leader>mg :MagitOnly<CR>
 
 " tyop (aka slow fingers)
 command! Q quit
