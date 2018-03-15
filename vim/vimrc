@@ -40,6 +40,7 @@ Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 "Plug 'google/yapf'
 "Plug 'python-mode/python-mode'
+Plug 'Vimjas/vim-python-pep8-indent'
 
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
@@ -49,21 +50,11 @@ Plug 'prettier/vim-prettier'
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 
+Plug 'hashivim/vim-terraform'
+
 " Plug 'python-rope/ropevim'
 
 call plug#end()
-
-
-"==================================================
-" Filetypes
-" TODO clean this up a bit
-"-------------------------
-
-autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
-set wildignore+=*.pyc
-set backupskip=/tmp/*,/private/tmp/*
-
-let b:current_syntax = "gitconfig-local"
 
 
 "==================================================
@@ -118,6 +109,18 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 set nobackup                      " No backups.
 set nowritebackup                 " No backups.
 "set noswapfile                    " No swap files; more hassle than they're worth. | Actually...
+
+
+"==================================================
+" Filetypes
+" TODO clean this up a bit
+"-------------------------
+
+autocmd Filetype ts,js,json,tf setlocal ts=2 sts=2 sw=2
+set wildignore+=*.pyc
+set backupskip=/tmp/*,/private/tmp/*
+
+let b:current_syntax = "gitconfig-local"
 
 
 "==================================================
@@ -205,6 +208,7 @@ hi! Todo    cterm=italic ctermfg=0   ctermbg=255 guifg=#000000 guibg=#ffffff
 
 function! HighlightPythonDocstringsAsComments()
     syn region Comment start=/"""/ end=/"""/
+    syn region Comment start=/'''/ end=/'''/
 endfunction
 
 function! HighlightVimComments()
@@ -321,3 +325,21 @@ let python_highlight_all=1
 " python-rope/ropevim
 let g:ropevim_global_prefix = '<Leader>rp'
 let g:ropevim_local_prefix = '<Leader>rr'
+
+" Prettier
+let g:prettier#quickfix_enabled = 0
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
+
+let g:prettier#config#single_quote = 'false'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#parser = 'babylon'
+let g:prettier#config#trailing_comma = 'es5'
+let g:prettier#config#arrow_parens = 'avoid'
+
+" hashivim/vim-terraform
+let g:terraform_align = 1
+ 
+
+" WTF
+autocmd Filetype json setlocal conceallevel=0
