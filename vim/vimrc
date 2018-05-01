@@ -201,7 +201,7 @@ set termguicolors
 set background=dark
 " colorscheme gruvbox
 let ayucolor="mirage"
-colorscheme Ayu
+colorscheme ayu
 
 hi! Comment cterm=italic ctermfg=255             guifg=#ffffff
 hi! Todo    cterm=italic ctermfg=0   ctermbg=255 guifg=#000000 guibg=#ffffff
