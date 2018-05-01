@@ -17,7 +17,15 @@ setopt incappendhistory
 
 export PATH="$PATH:/usr/local/bin:~/bin"
 
-function cwd () { echo $(pwd); }
+setopt PROMPT_SUBST
+function git_branch() {
+    if [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) ]];
+    then
+        echo -n " %F{yellow}|%f %F{cyan}"
+        echo -n $(git rev-parse --abbrev-ref HEAD)
+        echo -n "%f"
+    fi
+}
 export PROMPT="
-%F{magenta}%B%n%b%f %F{blue}@%f %F{green}%B%M%b%f %F{blue}/%f %F{yellow}%B%~%b%f
+%F{magenta}%B%n%b%f %F{yellow}@%f %F{green}%B%M%b%f %F{yellow}/%f %F{blue}%B%~%b%f\$(git_branch)
 %F{red}%#%f %B"
