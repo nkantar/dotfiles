@@ -30,6 +30,20 @@ window:
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
   decorations: true
+=======
+# Adds this many blank pixels of padding around the window
+# Units are physical pixels; this is not DPI aware.
+# (change requires restart)
+padding:
+  x: 2
+  y: 2
+
+# The FreeType rasterizer needs to know the device DPI for best results
+# (changes require restart)
+dpi:
+  x: 227
+  y: 227
+>>>>>>> a83d510e9a80fc6a1491b959f9f082a6706295c1
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -72,6 +86,13 @@ font:
   glyph_offset:
     x: 0
     y: 0
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increase the x offset to move the glyph to
+  # the right, increase the y offset to move the glyph upward.
+  glyph_offset:
+    x: 0.0
+    y: 0.0
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
@@ -145,6 +166,7 @@ visual_bell:
 # Background opacity
 background_opacity: 1.0
 
+<<<<<<< HEAD
 # Mouse bindings
 #
 # Currently doesn't support modifiers. Both the `mouse` and `action` fields must
@@ -210,6 +232,8 @@ live_config_reload: true
 #   args:
 #     - --login
 
+=======
+>>>>>>> a83d510e9a80fc6a1491b959f9f082a6706295c1
 # Key bindings
 #
 # Each binding is defined as an object with some properties. Most of the
@@ -254,9 +278,12 @@ key_bindings:
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
   - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
+<<<<<<< HEAD
   - { key: Key0,     mods: Command, action: ResetFontSize                }
   - { key: Equals,   mods: Command, action: IncreaseFontSize             }
   - { key: Minus,    mods: Command, action: DecreaseFontSize             }
+=======
+>>>>>>> a83d510e9a80fc6a1491b959f9f082a6706295c1
   - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
   - { key: PageUp,                  chars: "\x1b[5~"                     }
@@ -300,6 +327,7 @@ key_bindings:
   - { key: F10,                     chars: "\x1b[21~"                    }
   - { key: F11,                     chars: "\x1b[23~"                    }
   - { key: F12,                     chars: "\x1b[24~"                    }
+<<<<<<< HEAD
   - { key: F1,       mods: Shift,   chars: "\x1b[1;2P"                   }
   - { key: F2,       mods: Shift,   chars: "\x1b[1;2Q"                   }
   - { key: F3,       mods: Shift,   chars: "\x1b[1;2R"                   }
@@ -349,3 +377,49 @@ key_bindings:
   - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
 
+=======
+  - { key: Back,                    chars: "\x7f"                        }
+  - { key: Back,     mods: Alt,     chars: "\x1b\x7f"                    }
+  - { key: Insert,                  chars: "\x1b[2~"                     }
+  - { key: Delete,                  chars: "\x1b[3~"                     }
+
+# Mouse bindings
+#
+# Currently doesn't support modifiers. Both the `mouse` and `action` fields must
+# be specified.
+#
+# Values for `mouse`:
+# - Middle
+# - Left
+# - Right
+# - Numeric identifier such as `5`
+#
+# Values for `action`:
+# - Paste
+# - PasteSelection
+# - Copy (TODO)
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+hide_cursor_when_typing: false
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+# Shell
+#
+# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
+# Entries in shell.args are passed unmodified as arguments to the shell.
+#
+#shell:
+#  program: /bin/bash
+#  args:
+#    - --login
+>>>>>>> a83d510e9a80fc6a1491b959f9f082a6706295c1

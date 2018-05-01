@@ -6,5 +6,5 @@
 set -e
 
 commit_hash=$(git rev-parse --verify HEAD)
-echo $commit_hash | pbcopy
+echo -n $commit_hash | pbcopy
 echo "Copied commit hash $commit_hash to clipboard."
