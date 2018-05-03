@@ -18,14 +18,22 @@ setopt incappendhistory
 export PATH="$PATH:/usr/local/bin:~/bin"
 
 setopt PROMPT_SUBST
-function git_branch() {
+function git_status() {
     if [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) ]];
     then
         echo -n " %F{yellow}|%f %F{cyan}"
         echo -n $(git rev-parse --abbrev-ref HEAD)
+        if [[ $(git diff --shortstat | tail -n1) != "" ]];
+        then
+            echo -n " %F{red}*%f"
+        fi
+        if [[ $(git status --porcelain | grep "^??" | wc -l | tr -d " ") != "0" ]];
+        then
+            echo -n " %F{red}+%f"
+        fi
         echo -n "%f"
     fi
 }
 export PROMPT="
-%F{magenta}%B%n%b%f %F{yellow}@%f %F{green}%B%M%b%f %F{yellow}/%f %F{blue}%B%~%b%f\$(git_branch)
-%F{red}%#%f %B"
+%F{magenta}%B%n%b%f %F{yellow}@%f %F{green}%B%M%b%f %F{yellow}/%f %F{blue}%B%~%b%f\$(git_status)
+%F{white}%#%f %B"
