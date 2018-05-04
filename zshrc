@@ -36,4 +36,4 @@ function git_status() {
 }
 export PROMPT="
 %F{magenta}%B%n%b%f %F{yellow}@%f %F{green}%B%M%b%f %F{yellow}/%f %F{blue}%B%~%b%f\$(git_status)
-%F{white}%#%f %B"
+%F{white}%B%#%b%f "
