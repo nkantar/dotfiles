@@ -1,6 +1,8 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.aliases.sh ] && source ~/.aliases.sh
 
+export PATH=~/bin:${PATH}
+
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
@@ -14,8 +16,6 @@ SAVEHIST=5000
 setopt appendhistory
 setopt sharehistory
 setopt incappendhistory
-
-export PATH="$PATH:/usr/local/bin:~/bin"
 
 setopt PROMPT_SUBST
 function git_status() {
