@@ -1,5 +1,6 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.aliases.sh ] && source ~/.aliases.sh
+[ -f ~/.env_vars.sh ] source ~/.env_vars.sh
 
 export PATH=~/bin:${PATH}
 export PATH=/usr/local/bin/:${PATH}
