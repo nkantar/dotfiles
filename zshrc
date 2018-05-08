@@ -3,7 +3,7 @@
 [ -f ~/.env_vars.sh ] && source ~/.env_vars.sh
 
 export PATH=~/bin:${PATH}
-export PATH=/usr/local/bin/:${PATH}
+export PATH=/usr/local/bin:${PATH}
 
 export EDITOR=$(which vim)
 
