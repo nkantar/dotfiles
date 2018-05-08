@@ -4,55 +4,24 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimfiler.vim'
-Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ferranpm/vim-isolate'
-Plug 'hdima/python-syntax'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/vim-emoji'
 Plug 'justinmk/vim-sneak'
-Plug 'metakirby5/codi.vim'
-Plug 'mtth/scratch.vim'
-Plug 'nkantar/GHT.vim'
-Plug 'nkantar/SPI.vim'
-Plug 'rizzatti/dash.vim'
-Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-surround'
-Plug 'vim-scripts/Css-Pretty'
-Plug 'mhinz/vim-startify'
 Plug 'w0rp/ale'
-Plug 'Yggdroot/indentLine'
-Plug 'rhysd/devdocs.vim'
 
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-"Plug 'google/yapf'
-"Plug 'python-mode/python-mode'
-Plug 'Vimjas/vim-python-pep8-indent'
-
-" TypeScript
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'Quramy/tsuquyomi'
-Plug 'prettier/vim-prettier'
-
-Plug 'morhetz/gruvbox'
+" colorschemes
 Plug 'ayu-theme/ayu-vim'
+Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
+Plug 'sjl/badwolf'
 
-Plug 'hashivim/vim-terraform'
-
-" Plug 'python-rope/ropevim'
+source ~/.vim/work/plugins.vim
 
 call plug#end()
 
@@ -62,8 +31,8 @@ call plug#end()
 "-------------------------
 
 set expandtab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set smarttab
 
 set laststatus=2
@@ -87,8 +56,6 @@ set backspace=2
 
 set completeopt-=preview
 
-" set shell=zsh\ -l
-
 set shortmess+=c
 
 set incsearch
@@ -108,7 +75,6 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 " from https://github.com/airblade/dotvim/blob/dd5d7737e39aad5e24c1a4a8c0d115ff2ae7b488/vimrc#L109-L111
 set nobackup                      " No backups.
 set nowritebackup                 " No backups.
-"set noswapfile                    " No swap files; more hassle than they're worth. | Actually...
 
 
 "==================================================
@@ -199,9 +165,11 @@ autocmd Filetype qf set colorcolumn=
 " colors
 set termguicolors
 set background=dark
+" let ayucolor="mirage"
+" colorscheme ayu
 " colorscheme gruvbox
-let ayucolor="mirage"
-colorscheme ayu
+colorscheme one
+" colorscheme goodwolf
 
 hi! Comment cterm=italic ctermfg=255             guifg=#ffffff
 hi! Todo    cterm=italic ctermfg=0   ctermbg=255 guifg=#000000 guibg=#ffffff
@@ -220,6 +188,7 @@ call HighlightVimComments()
 
 set nocul
 set nocursorcolumn
+
 
 "==================================================
 " Keymappings
@@ -290,18 +259,17 @@ command! Q quit
 
 
 "==================================================
+" MacVim
+"-------------------------
+set guifont=Mononoki:h13
+if has("gui_macvim")
+    set lines=48 columns=120
+endif
+
+
+"==================================================
 " Plugin config
 "-------------------------
-
-" mhinz/vim-startify
-let g:startify_change_to_dir = 0
-
-" SirVer/ultisnips
-let g:UltiSnipsExpandTrigger='<c-\>'
-
-" tpope/vim-markdown
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
-let g:markdown_syntax_conceal = 0
 
 " w0rp/ale
 filetype off
@@ -319,27 +287,5 @@ let g:ale_open_list = 0
 " justinmk/vim-sneak
 let g:sneak#label = 1
 
-" hdima/python-syntax
-let python_highlight_all=1
 
-" python-rope/ropevim
-let g:ropevim_global_prefix = '<Leader>rp'
-let g:ropevim_local_prefix = '<Leader>rr'
-
-" Prettier
-let g:prettier#quickfix_enabled = 0
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
-
-let g:prettier#config#single_quote = 'false'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#parser = 'babylon'
-let g:prettier#config#trailing_comma = 'es5'
-let g:prettier#config#arrow_parens = 'avoid'
-
-" hashivim/vim-terraform
-let g:terraform_align = 1
- 
-
-" WTF
-autocmd Filetype json setlocal conceallevel=0
+source ~/.vim/work/config.vim
