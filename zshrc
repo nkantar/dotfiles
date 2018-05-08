@@ -2,6 +2,7 @@
 [ -f ~/.aliases.sh ] && source ~/.aliases.sh
 
 export PATH=~/bin:${PATH}
+export PATH=/usr/local/bin/:${PATH}
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
