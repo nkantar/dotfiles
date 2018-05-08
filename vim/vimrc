@@ -261,7 +261,7 @@ command! Q quit
 "==================================================
 " MacVim
 "-------------------------
-set guifont=Mononoki:h13
+set guifont=Mononoki:h14
 if has("gui_macvim")
     set lines=48 columns=120
 endif
