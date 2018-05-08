@@ -5,6 +5,8 @@
 export PATH=~/bin:${PATH}
 export PATH=/usr/local/bin/:${PATH}
 
+export EDITOR=$(which vim)
+
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
