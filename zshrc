@@ -9,6 +9,8 @@ export EDITOR=$(which vim)
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --smart-case --follow --glob "!.git/*"'
 
+export HOMEBREW_NO_ANALYTICS=1
+
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
