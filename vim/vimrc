@@ -1,4 +1,11 @@
 "==================================================
+" Constants
+"-------------------------
+
+let g:hostname = system('hostname -s')
+
+
+"==================================================
 " Plugins
 "-------------------------
 
@@ -6,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'gcmt/taboo.vim'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -15,13 +23,24 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'w0rp/ale'
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 " colorschemes
 Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'sjl/badwolf'
 
-source ~/.vim/work/plugins.vim
+" work stuff
+if g:hostname ==# "mbp15005\n"
+  source ~/.vim/work/plugins.vim
+endif
 
 call plug#end()
 
@@ -282,10 +301,16 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 0
 let g:ale_open_list = 0
 
 " justinmk/vim-sneak
 let g:sneak#label = 1
 
+" Shougo/deoplete.nvim
+let g:deoplete#enable_at_startup = 1
 
-source ~/.vim/work/config.vim
+" work stuff
+if g:hostname ==# "mbp15005\n"
+  source ~/.vim/work/config.vim
+endif
