@@ -95,6 +95,10 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 set nobackup                      " No backups.
 set nowritebackup                 " No backups.
 
+" netrw
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+
 
 "==================================================
 " Filetypes
@@ -190,8 +194,15 @@ set background=dark
 colorscheme one
 " colorscheme goodwolf
 
-hi! Comment cterm=italic ctermfg=255             guifg=#ffffff
-hi! Todo    cterm=italic ctermfg=0   ctermbg=255 guifg=#000000 guibg=#ffffff
+function! EmphasizeComments()
+  if &background ==# "dark"
+    hi! Comment cterm=italic ctermfg=255             guifg=#ffffff
+    hi! Todo    cterm=italic ctermfg=0   ctermbg=255 guifg=#000000 guibg=#ffffff
+  else
+    hi! Comment cterm=italic ctermfg=0             guifg=#000000
+    hi! Todo    cterm=italic ctermfg=255   ctermbg=0 guifg=#ffffff guibg=#000000
+  endif
+endfunction
 
 function! HighlightPythonDocstringsAsComments()
     syn region Comment start=/"""/ end=/"""/
@@ -202,8 +213,27 @@ function! HighlightVimComments()
     syn region Comment start=/"/ end=/$/
 endfunction
 
+call EmphasizeComments()
 call HighlightPythonDocstringsAsComments()
 call HighlightVimComments()
+
+function! GoLight()
+  set background=light
+  call EmphasizeComments()
+endfunction
+
+function! GoDark()
+  set background=dark
+  call EmphasizeComments()
+endfunction
+
+function! ToggleDarkLight()
+  if &background ==# "dark"
+    call GoLight()
+  else
+    call GoDark()
+  endif
+endfunction
 
 set nocul
 set nocursorcolumn
@@ -263,6 +293,12 @@ nnoremap <Leader>td /TODO<CR>
 " clear find highlights
 nnoremap <Leader>nh :noh<CR>
 
+" colors
+nnoremap <Leader>l :call ToggleDarkLight()<CR>
+
+" netrw
+nnoremap <Leader>ne :e .<CR>
+
 " fzf
 nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader>fc :Commits<CR>
@@ -272,6 +308,9 @@ nnoremap <Leader>fl :BLines<CR>
 
 " Vimagit
 nnoremap <Leader>mg :MagitOnly<CR>
+
+" vim-plug
+nnoremap <Leader>pu :PlugUpdate<CR>
 
 " tyop (aka slow fingers)
 command! Q quit
