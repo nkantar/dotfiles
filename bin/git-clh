@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Copy the last commit's hash to the clipboard (with a newline at the end).
+# Copy the last commit's hash to the clipboard.
 # Handy for cherry-picking, for example.
 
 set -e
