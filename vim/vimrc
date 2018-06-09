@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'gcmt/taboo.vim'
+Plug 'jremmen/vim-ripgrep'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -298,6 +299,10 @@ nnoremap <Leader>l :call ToggleDarkLight()<CR>
 
 " netrw
 nnoremap <Leader>ne :e .<CR>
+
+" ALE
+nnoremap <Leader>ad :ALEDetail<CR>
+nnoremap <Leader>at :ALEToggle<CR>
 
 " fzf
 nnoremap <Leader>ff :Files<CR>
