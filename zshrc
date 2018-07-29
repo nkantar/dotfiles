@@ -51,5 +51,5 @@ function host_prompt_info() {
 }
 
 export PROMPT="
-%F{magenta}%B%n%b%f %F{yellow}@%f %F{green}%B \$(host_prompt_info) %b%f %F{yellow}/%f %F{blue}%B%~%b%f\$(git_status)
+%F{magenta}%B%n%b%f %F{yellow}@%f %F{green}%B\$(host_prompt_info)%b%f %F{yellow}/%f %F{blue}%B%~%b%f\$(git_status)
 %F{white}%B%#%b%f "
