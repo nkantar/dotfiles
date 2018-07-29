@@ -173,7 +173,7 @@ set statusline+=%{GitBranchForStatusline()} " Git branch
 
 set statusline+=%{PasteForStatusline()}     " paste ([p])
 set statusline+=\ 
-set statusline+=[%{ALEGetStatusLine()}]     " ALE
+" set statusline+=[%{ALEGetStatusLine()}]     " ALE
 
 function! StripTrailingWhitespace()
     execute '%s/\s\+$//g'
