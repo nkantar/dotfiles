@@ -30,7 +30,7 @@ function git_status() {
     if [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) ]];
     then
         echo -n " %F{yellow}|%f %F{cyan}"
-        echo -n $(git rev-parse --abbrev-ref HEAD)
+        echo -n $(git rev-parse --abbrev-ref HEAD 2>/dev/null)
         if [[ $(git diff --shortstat | tail -n1) != "" ]];
         then
             echo -n " %F{red}*%f"
