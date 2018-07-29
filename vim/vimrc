@@ -41,6 +41,9 @@ Plug 'sjl/badwolf'
 " work stuff
 if g:hostname ==# "mbp15005\n"
   source ~/.vim/work/plugins.vim
+" elseif g:hostname ==# "bucket\n"
+else
+  source ~/.vim/personal/plugins.vim
 endif
 
 call plug#end()
@@ -357,4 +360,7 @@ let g:deoplete#enable_at_startup = 1
 " work stuff
 if g:hostname ==# "mbp15005\n"
   source ~/.vim/work/config.vim
+" elseif g:hostname ==# "bucket\n"
+else
+  source ~/.vim/personal/config.vim
 endif
