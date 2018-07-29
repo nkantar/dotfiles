@@ -42,6 +42,14 @@ function git_status() {
         echo -n "%f"
     fi
 }
+
+function host_prompt_info() {
+		echo -n "$HOST"
+    if [ -n "$SSH_CLIENT" ]; then
+				echo -n " [r]"
+    fi
+}
+
 export PROMPT="
-%F{magenta}%B%n%b%f %F{yellow}@%f %F{green}%B%M%b%f %F{yellow}/%f %F{blue}%B%~%b%f\$(git_status)
+%F{magenta}%B%n%b%f %F{yellow}@%f %F{green}%B \$(host_prompt_info) %b%f %F{yellow}/%f %F{blue}%B%~%b%f\$(git_status)
 %F{white}%B%#%b%f "
