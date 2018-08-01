@@ -2,6 +2,7 @@
 let g:prettier#quickfix_enabled = 0
 let g:prettier#autoformat = 1
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
+nnoremap <Leader>pp :Prettier<CR>
 
 let g:prettier#config#single_quote = 'false'
 let g:prettier#config#bracket_spacing = 'false'
