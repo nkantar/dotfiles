@@ -30,7 +30,7 @@ function git_status() {
     if [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) ]];
     then
         echo -n " %F{yellow}|%f %F{cyan}"
-        echo -n $(git rev-parse --abbrev-ref HEAD)
+        echo -n $(git rev-parse --abbrev-ref HEAD 2>/dev/null)
         if [[ $(git diff --shortstat | tail -n1) != "" ]];
         then
             echo -n " %F{red}*%f"
@@ -42,6 +42,14 @@ function git_status() {
         echo -n "%f"
     fi
 }
+
+function host_prompt_info() {
+		echo -n "$HOST"
+    if [ -n "$SSH_CLIENT" ]; then
+				echo -n " [r]"
+    fi
+}
+
 export PROMPT="
-%F{magenta}%B%n%b%f %F{yellow}@%f %F{green}%B%M%b%f %F{yellow}/%f %F{blue}%B%~%b%f\$(git_status)
+%F{magenta}%B%n%b%f %F{yellow}@%f %F{green}%B\$(host_prompt_info)%b%f %F{yellow}/%f %F{blue}%B%~%b%f\$(git_status)
 %F{white}%B%#%b%f "

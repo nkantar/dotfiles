@@ -12,16 +12,6 @@ alias cll="cls && ls -l"
 
 #alias cdg="cd `git rev-parse --show-toplevel`"
 
-alias cdapps="cd ~/Projects/apps"
-alias cddevops="cd ~/Projects/devops"
-alias cddocs="cd ~/Projects/devdocs"
-
-alias bpg="pg_ctl -D /usr/local/var/postgres"
-
-alias agp="ag --python"
-alias agh="ag --html"
-alias agj="ag --js"
-
 alias rgp="rg -t py"
 alias rgh="rg -t html"
 alias rgj="rg -t js"
@@ -40,6 +30,7 @@ alias v="vim"
 alias va="vagrant"
 alias ve3="python3 -m venv"
 alias ve="virtualenv"
+alias per="pipenv run"
 
 alias ccat="pygmentize -O style=monokai -f console256 -g"
 cless() { ccat $1 | less; }
