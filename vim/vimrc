@@ -41,7 +41,6 @@ Plug 'sjl/badwolf'
 " work stuff
 if g:hostname ==# "mbp15005\n"
   source ~/.vim/work/plugins.vim
-" elseif g:hostname ==# "bucket\n"
 else
   source ~/.vim/personal/plugins.vim
 endif
@@ -124,7 +123,7 @@ set nocompatible              " be iMproved, required
 syntax on
 set number
 set relativenumber
-set colorcolumn=73,80,100,120
+set colorcolumn=
 set cursorline
 
 set hlsearch
@@ -374,7 +373,19 @@ let g:deoplete#enable_at_startup = 1
 " work stuff
 if g:hostname ==# "mbp15005\n"
   source ~/.vim/work/config.vim
-" elseif g:hostname ==# "bucket\n"
 else
   source ~/.vim/personal/config.vim
 endif
+
+
+
+""""""""""""""""""
+" talk screenshots
+" set colorcolumn=
+" set nonumber
+" set norelativenumber
+" set noshowmode
+" set noruler
+" set laststatus=0
+" set noshowcmd
+" set t_ve=
