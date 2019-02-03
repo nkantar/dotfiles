@@ -1,3 +1,4 @@
 # ln -s ~/dotfiles/ssh_config ~/.ssh/config
 UseKeychain yes
 AddKeysToAgent yes
+IdentityFile ~/.ssh/id_rsa
