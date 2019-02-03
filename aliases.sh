@@ -23,14 +23,12 @@ alias tarx="tar -xvzf"
 
 alias dcmp="docker-compose"
 alias g="git"
-alias nv="nvim"
 alias p3="python3"
 alias p="python"
 alias v="vim"
 alias va="vagrant"
 alias ve3="python3 -m venv"
 alias ve="virtualenv"
-alias per="pipenv run"
 
 alias ccat="pygmentize -O style=monokai -f console256 -g"
 cless() { ccat $1 | less; }
