@@ -1,11 +1,4 @@
 "==================================================
-" Constants
-"-------------------------
-
-let g:hostname = system('hostname -s')
-
-
-"==================================================
 " Plugins
 "-------------------------
 
@@ -18,6 +11,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'ambv/black'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'gcmt/taboo.vim'
 Plug 'jremmen/vim-ripgrep'
@@ -40,16 +34,12 @@ endif
 
 " colorschemes
 Plug 'ayu-theme/ayu-vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'kaicataldo/material.vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'sjl/badwolf'
-
-" work stuff
-if g:hostname ==# "mbp15005\n"
-  source ~/.vim/work/plugins.vim
-else
-  source ~/.vim/personal/plugins.vim
-endif
+Plug 'vim-scripts/tomatosoup.vim'
 
 call plug#end()
 
@@ -104,9 +94,15 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 set nobackup                      " No backups.
 set nowritebackup                 " No backups.
 
+" backup
+set backupdir=~/.vim/backup
+" swap files
+set directory=~/.vim/backup
+
 " netrw
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
+let g:netrw_list_hide= '__pycache__,.pytest_cache'
 
 
 "==================================================
@@ -129,7 +125,7 @@ set nocompatible              " be iMproved, required
 syntax on
 set number
 set relativenumber
-set colorcolumn=
+set colorcolumn=50,72,88
 set cursorline
 
 set hlsearch
@@ -216,6 +212,10 @@ set background=dark
 " colorscheme gruvbox
 colorscheme one
 " colorscheme goodwolf
+" colorscheme badwolf
+" colorscheme material
+" colorscheme tomatosoup
+" colorscheme iceberg
 
 function! EmphasizeComments()
   if &background ==# "dark"
@@ -360,7 +360,7 @@ endif
 filetype off
 let &runtimepath.=',~/.vim/bundle/ale'
 filetype plugin on
-let g:ale_linters = { 'python': ['flake8'], }
+let g:ale_linters = { 'python': ['flake8', 'mypy'], }
 let g:ale_sign_column_always = 1
 let g:ale_statusline_format = ['x%d', '!%d', 'OK']
 let g:ale_echo_msg_error_str = 'E'
@@ -376,12 +376,9 @@ let g:sneak#label = 1
 " Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 
-" work stuff
-if g:hostname ==# "mbp15005\n"
-  source ~/.vim/work/config.vim
-else
-  source ~/.vim/personal/config.vim
-endif
+" Black
+" autocmd BufWritePre *.py execute ':Black'
+
 
 
 
