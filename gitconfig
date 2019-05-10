@@ -42,10 +42,12 @@
     ru = remote update
     am = commit --verbose --amend
     ;l = log --pretty=\"%h  %C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
-    l = log --pretty=\"%h  %<(16)%C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
+    ;l = log --pretty=\"%h  %<(16)%C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
+    l = log --pretty=\"%h  %C(yellow)%an%Creset  %Cblue%ar%Creset  %s\"
     dic = diff --cached
 
     ld = log HEAD~1..HEAD --pretty="%H"
 
     sw = sweep
     fr = fire
+	pushf = push --force-with-lease
