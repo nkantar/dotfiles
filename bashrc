@@ -46,6 +46,12 @@ function git_status() {
 }
 
 export PS1=""
+export PS1+="$COLOR_WHITE"
+export PS1+='\t'
+export PS1+="$COLOR_NC"
+export PS1+=" "
+export PS1+="|"
+export PS1+=" "
 export PS1+="$COLOR_YELLOW"
 export PS1+='\u'
 export PS1+="$COLOR_NC"
