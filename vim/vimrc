@@ -19,6 +19,7 @@ Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
+Plug 'rakr/vim-one'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
@@ -31,15 +32,6 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-
-" colorschemes
-Plug 'ayu-theme/ayu-vim'
-Plug 'cocopon/iceberg.vim'
-Plug 'kaicataldo/material.vim'
-Plug 'morhetz/gruvbox'
-Plug 'rakr/vim-one'
-Plug 'sjl/badwolf'
-Plug 'vim-scripts/tomatosoup.vim'
 
 call plug#end()
 
@@ -207,15 +199,7 @@ autocmd Filetype qf set colorcolumn=
 " colors
 set termguicolors
 set background=dark
-" let ayucolor="mirage"
-" colorscheme ayu
-" colorscheme gruvbox
 colorscheme one
-" colorscheme goodwolf
-" colorscheme badwolf
-" colorscheme material
-" colorscheme tomatosoup
-" colorscheme iceberg
 
 function! EmphasizeComments()
   if &background ==# "dark"
