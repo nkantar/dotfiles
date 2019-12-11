@@ -9,6 +9,7 @@ alias lat="ls -lat"
 alias clat="clear && ls -lat"
 alias ll="ls -l"
 alias cll="cls && ls -l"
+alias cl="cd $1 && ls"
 
 #alias cdg="cd `git rev-parse --show-toplevel`"
 
@@ -29,6 +30,8 @@ alias v="vim"
 alias va="vagrant"
 alias ve3="python3 -m venv"
 alias ve="virtualenv"
+
+alias btreset="blueutil -p 0 && blueutil -p 1"
 
 alias ccat="pygmentize -O style=monokai -f console256 -g"
 cless() { ccat $1 | less; }
