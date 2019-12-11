@@ -24,7 +24,7 @@ COLOR_YELLOW='\e[1;33m'
 COLOR_GRAY='\e[0;30m'
 COLOR_LIGHT_GRAY='\e[0;37m'
 
-function host_ps1() {
+function remote_host_status() {
   if [ -n "$SSH_CLIENT" ]; then
     echo -n -e " $COLOR_RED[r]$COLOR_NC"
   fi
@@ -60,7 +60,7 @@ export PS1+='@'
 export PS1+=" "
 export PS1+="$COLOR_BLUE"
 export PS1+='\h'
-export PS1+='$(host_ps1)'
+export PS1+='$(remote_host_status)'
 export PS1+="$COLOR_NC"
 export PS1+=" "
 export PS1+='/'
