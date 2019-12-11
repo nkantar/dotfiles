@@ -370,6 +370,7 @@ let g:deoplete#enable_at_startup = 1
 
 " Black
 autocmd BufWritePre *.py execute ':Black'
+let g:black_virtualenv="~/.vim_black"
 
 " Prettier
 autocmd BufWritePre *.html execute ':Prettier'
