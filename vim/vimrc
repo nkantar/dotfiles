@@ -19,11 +19,18 @@ Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'rakr/vim-one'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'w0rp/ale'
+
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'hashivim/vim-terraform'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -200,6 +207,7 @@ autocmd Filetype qf set colorcolumn=
 set termguicolors
 set background=dark
 colorscheme one
+" colorscheme dracula
 
 function! EmphasizeComments()
   if &background ==# "dark"
@@ -361,7 +369,11 @@ let g:sneak#label = 1
 let g:deoplete#enable_at_startup = 1
 
 " Black
-" autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.py execute ':Black'
+
+" Prettier
+autocmd BufWritePre *.html execute ':Prettier'
+autocmd BufWritePre *.scss execute ':Prettier'
 
 
 
