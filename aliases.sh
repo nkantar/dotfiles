@@ -29,6 +29,7 @@ alias v="vim"
 alias va="vagrant"
 alias ve3="python3 -m venv"
 alias ve="virtualenv"
+alias tf="terraform"
 
 alias ccat="pygmentize -O style=monokai -f console256 -g"
 cless() { ccat $1 | less; }
