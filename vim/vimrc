@@ -11,7 +11,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'ambv/black'
+Plug 'psf/black'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'gcmt/taboo.vim'
 Plug 'jremmen/vim-ripgrep'
@@ -19,11 +19,15 @@ Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'rakr/vim-one'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'w0rp/ale'
+
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 Plug 'hashivim/vim-terraform'
 
@@ -202,6 +206,7 @@ autocmd Filetype qf set colorcolumn=
 set termguicolors
 set background=dark
 colorscheme one
+" colorscheme dracula
 
 function! EmphasizeComments()
   if &background ==# "dark"
@@ -365,17 +370,8 @@ let g:deoplete#enable_at_startup = 1
 
 " Black
 autocmd BufWritePre *.py execute ':Black'
+let g:black_virtualenv="~/.vim_black"
 
-
-
-
-""""""""""""""""""
-" talk screenshots
-" set colorcolumn=
-" set nonumber
-" set norelativenumber
-" set noshowmode
-" set noruler
-" set laststatus=0
-" set noshowcmd
-" set t_ve=
+" Prettier
+autocmd BufWritePre *.html execute ':Prettier'
+autocmd BufWritePre *.scss execute ':Prettier'
