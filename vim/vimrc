@@ -25,6 +25,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'w0rp/ale'
 
+Plug 'hashivim/vim-terraform'
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -285,6 +287,7 @@ nnoremap <Leader>tw :tabnew<CR>
 nnoremap <Leader>tc :tabclose<CR>
 nnoremap <Leader>tn :tabnext<CR>
 nnoremap <Leader>tp :tabprevious<CR>
+nnoremap <Leader>tr :TabooRename 
 
 " filetype syntax shortcuts
 nnoremap <Leader>md :set syntax=markdown<CR>:set filetype=markdown<CR>
@@ -361,7 +364,7 @@ let g:sneak#label = 1
 let g:deoplete#enable_at_startup = 1
 
 " Black
-" autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.py execute ':Black'
 
 
 
