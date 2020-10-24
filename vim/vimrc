@@ -11,7 +11,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'ambv/black'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'gcmt/taboo.vim'
 Plug 'jremmen/vim-ripgrep'
@@ -19,26 +18,29 @@ Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
+" Plug 'psf/black', { 'branch': 'stable' }
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'rakr/vim-one'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'hashivim/vim-terraform'
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -190,7 +192,7 @@ set statusline+=%{GitBranchForStatusline()} " Git branch
 set statusline+=%{PasteForStatusline()}     " paste ([p])
 set statusline+=\ 
 " set statusline+=[%{ALEGetStatusLine()}]     " ALE
-set statusline+=%{LinterStatus()}
+" set statusline+=%{LinterStatus()}
 
 function! StripTrailingWhitespace()
     execute '%s/\s\+$//g'
@@ -207,7 +209,6 @@ autocmd Filetype qf set colorcolumn=
 set termguicolors
 set background=dark
 colorscheme one
-" colorscheme dracula
 
 function! EmphasizeComments()
   if &background ==# "dark"
@@ -338,9 +339,9 @@ command! Q quit
 "==================================================
 " MacVim
 "-------------------------
-set guifont=Mononoki:h14
+set guifont=Mononoki:h18
 if has("gui_macvim")
-    set lines=48 columns=120
+    set lines=48 columns=100
 endif
 
 
@@ -349,31 +350,32 @@ endif
 "-------------------------
 
 " w0rp/ale
-filetype off
-let &runtimepath.=',~/.vim/bundle/ale'
-filetype plugin on
-let g:ale_linters = { 'python': ['flake8', 'mypy'], }
-let g:ale_sign_column_always = 1
-let g:ale_statusline_format = ['x%d', '!%d', 'OK']
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 0
-let g:ale_open_list = 0
+" filetype off
+" let &runtimepath.=',~/.vim/bundle/ale'
+" filetype plugin on
+" let g:ale_linters = { 'python': ['flake8', 'mypy'], }
+" let g:ale_sign_column_always = 1
+" let g:ale_statusline_format = ['x%d', '!%d', 'OK']
+" let g:ale_echo_msg_error_str = 'E'
+" let g:ale_echo_msg_warning_str = 'W'
+" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" let g:ale_set_loclist = 0
+" let g:ale_set_quickfix = 0
+" let g:ale_open_list = 0
 
 " justinmk/vim-sneak
 let g:sneak#label = 1
 
 " Shougo/deoplete.nvim
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " Black
-autocmd BufWritePre *.py execute ':Black'
+" autocmd BufWritePre *.py execute ':Black'
+" let g:black_virtualenv="~/.vim/black"
 
 " Prettier
-autocmd BufWritePre *.html execute ':Prettier'
-autocmd BufWritePre *.scss execute ':Prettier'
+" autocmd BufWritePre *.html execute ':Prettier'
+" autocmd BufWritePre *.scss execute ':Prettier'
 
 
 
