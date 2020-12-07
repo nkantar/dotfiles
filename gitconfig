@@ -1,7 +1,5 @@
 [user]
     name = Nik Kantar
-[github]
-    user = nkantar
 ;in ~/.gitconfig-local
 ;[user]
     ;email = blah@example.com
@@ -13,6 +11,8 @@
     ui = true
 [push]
     default = simple
+[pull]
+    rebase = false
 [alias]
     a = add
     ci = commit
