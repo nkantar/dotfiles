@@ -3,6 +3,9 @@
 ;in ~/.gitconfig-local
 ;[user]
     ;email = blah@example.com
+;in ~/.gitconfig-local
+;[github]
+    ;user = nkantar
 ; [core]
 ;     pager = diff-so-fancy | less --tabs=4 -RFX
 [include]

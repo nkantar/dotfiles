@@ -31,6 +31,11 @@ alias va="vagrant"
 alias ve3="python3 -m venv"
 alias ve="virtualenv"
 alias tf="terraform"
+alias nv="nvim"
+alias hostedit="sudo nvim /etc/hosts"
+
+alias p2srv="python -m SimpleHTTPServer 8000"
+alias p3srv="python3 -m http.server 8000"
 
 alias btreset="blueutil -p 0 && blueutil -p 1"
 
