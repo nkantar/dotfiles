@@ -11,7 +11,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'psf/black'
+Plug 'cespare/vim-toml'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'gcmt/taboo.vim'
 Plug 'jremmen/vim-ripgrep'
@@ -20,6 +20,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'psf/black', { 'tag': '19.10b0' }
 Plug 'rakr/vim-one'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -373,5 +374,5 @@ autocmd BufWritePre *.py execute ':Black'
 let g:black_virtualenv="~/.vim_black"
 
 " Prettier
-autocmd BufWritePre *.html execute ':Prettier'
-autocmd BufWritePre *.scss execute ':Prettier'
+" autocmd BufWritePre *.html execute ':Prettier'
+" autocmd BufWritePre *.scss execute ':Prettier'
