@@ -11,6 +11,8 @@ alias ll="ls -l"
 alias cll="cls && ls -l"
 alias cl="cd $1 && ls"
 
+alias mkcd="mkdir -p $1 && cd $1"
+
 #alias cdg="cd `git rev-parse --show-toplevel`"
 
 alias rgp="rg -t py"
