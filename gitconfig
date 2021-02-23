@@ -23,10 +23,10 @@
     cv = commit --verbose
     pl = pull
     plo = pull origin
-    plom = pull origin master
+    plom = pull origin main
     ps = push
     pso = push origin
-    psom = push origin master
+    psom = push origin main
     pst = push --tags
     br = branch
     sh = show

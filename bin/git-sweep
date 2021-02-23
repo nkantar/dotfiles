@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# Delete any local branches that have been merged into master.
+# Delete any local branches that have been merged into main.
 
 set -e
 
-echo "Deleting all branches merged into master..."
-git branch --merged | grep -v "\*" | grep -v "master" | xargs -n 1 git branch -d
+echo "Deleting all branches merged into main..."
+git branch --merged | grep -v "\*" | grep -v "main" | xargs -n 1 git branch -d
 
