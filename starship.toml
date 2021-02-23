@@ -1,0 +1,22 @@
+# add_newline = false
+
+[character]
+success_symbol = "[➜](bold green)"
+
+[package]
+disabled = true
+
+[aws]
+disabled = true
+
+[battery]
+disabled = true
+
+[cmd_duration]
+disabled = true
+
+[directory]
+truncation_length = 0
+
+[nodejs]
+disabled = true#
