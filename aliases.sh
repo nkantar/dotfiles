@@ -15,6 +15,9 @@ alias mkcd="mkdir -p $1 && cd $1"
 
 #alias cdg="cd `git rev-parse --show-toplevel`"
 
+alias cpwd="pwd | pbcopy"
+alias cdirs="dirs | pbcopy"
+
 alias rgp="rg -t py"
 alias rgh="rg -t html"
 alias rgj="rg -t js"

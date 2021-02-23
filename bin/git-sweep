@@ -6,4 +6,3 @@ set -e
 
 echo "Deleting all branches merged into main..."
 git branch --merged | grep -v "\*" | grep -v "main" | xargs -n 1 git branch -d
-

@@ -7,7 +7,7 @@
 ;[github]
     ;user = nkantar
 ; [core]
-;     pager = diff-so-fancy | less --tabs=4 -RFX
+    ;pager = diff-so-fancy | less --tabs=4 -RFX
 [include]
     path = ~/.gitconfig-local
 [color]
@@ -53,6 +53,7 @@
 
     sw = sweep
     fr = fire
-	pushf = push --force-with-lease
+    pushf = push --force-with-lease
+
 [init]
 	defaultBranch = main

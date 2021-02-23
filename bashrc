@@ -4,7 +4,7 @@
 
 export PATH=~/bin:${PATH}
 
-export EDITOR=$(which vim)
+export EDITOR=$(which nvim)
 
 COLOR_NC='\e[0m' # No Color
 COLOR_WHITE='\e[1;37m'
