@@ -73,3 +73,9 @@ export PS1+=" "
 export PS1+='\n'
 export PS1+='\$'
 export PS1+=" "
+
+# Created by `userpath` on 2020-12-07 20:34:49
+export PATH="$PATH:/Users/nik/.local/bin"
+export PATH="$PATH:/usr/local/opt/python@3.8/bin"
+
+source /Users/nik/.config/broot/launcher/bash/br

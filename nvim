@@ -16,6 +16,8 @@ Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
 
+Plug 'AlessandroYorba/Alduin'
+
 " Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -27,6 +29,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-commentary'
+Plug 'voldikss/vim-floaterm'
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -53,7 +56,8 @@ call plug#end()
 filetype off
 let &runtimepath.=',~/.config/nvim/plugged/ale'
 filetype plugin on
-let g:ale_linters = { 'python': ['black', 'flake8', 'mypy'], }
+" let g:ale_linters = { 'python': ['black', 'flake8', 'mypy'], }
+let g:ale_linters = { 'python': ['black', 'flake8', ], }
 let g:ale_sign_column_always = 1
 let g:ale_statusline_format = ['x%d', '!%d', 'OK']
 let g:ale_echo_msg_error_str = 'E'
@@ -62,11 +66,17 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 0
 let g:ale_open_list = 0
+nnoremap <Leader>at :ALEToggle<CR>
 
 "----------
 " Black
 
 nnoremap <Leader>bb :Black<CR>
+
+"----------
+" floaterm
+
+nnoremap <Leader>ft :FloatermNew<CR>
 
 "----------
 " gitgutter
@@ -153,6 +163,9 @@ nnoremap <Leader>mr :!mdut -s reference
 nnoremap <Leader>mi :!mdut -s inline 
 nnoremap <Leader>ms :!mdut -s slack 
 
+" enable clean soft line breaks, preferred for prose
+nnoremap <Leader>sl :set lbr<CR>
+
 
 "==================================================
 " Behavior
@@ -174,8 +187,8 @@ set nocursorcolumn
 
 " tabs
 set expandtab
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 set smarttab
 
 " indentation
@@ -318,6 +331,7 @@ set background=dark
 "colorscheme nord
 "colorscheme iceberg
 "colorscheme dracula
+"colorscheme alduin
 colorscheme onedark
 
 
@@ -325,7 +339,7 @@ colorscheme onedark
 " MacVim
 "-------------------------
 
-set guifont=Mononoki:h16
+set guifont=RecMonoDuotone-Regular:h18
 if has("gui_macvim")
     set lines=60 columns=88
 endif

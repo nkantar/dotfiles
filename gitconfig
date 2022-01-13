@@ -24,6 +24,7 @@
     pl = pull
     plo = pull origin
     plom = pull origin main
+    plomr = pull origin main --rebase
     ps = push
     pso = push origin
     psom = push origin main
@@ -54,6 +55,9 @@
     sw = sweep
     fr = fire
     pushf = push --force-with-lease
+
+    whatsnew = diff HEAD..origin/main
+    wn = whatsnew
 
 [init]
 	defaultBranch = main
