@@ -148,6 +148,11 @@ nnoremap <Leader>td /TODO<CR>
 " clear find highlights
 nnoremap <Leader>nh :noh<CR>
 
+" mdut
+nnoremap <Leader>mr :!mdut -s reference 
+nnoremap <Leader>mi :!mdut -s inline 
+nnoremap <Leader>ms :!mdut -s slack 
+
 
 "==================================================
 " Behavior
