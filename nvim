@@ -166,6 +166,9 @@ nnoremap <Leader>ms :!mdut -s slack
 " enable clean soft line breaks, preferred for prose
 nnoremap <Leader>sl :set lbr<CR>
 
+" Python run current file
+nnoremap <Leader>pr :!python %<CR>
+
 
 "==================================================
 " Behavior
