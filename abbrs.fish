@@ -14,3 +14,5 @@ abbr nv nvim
 abbr lg lazygit
 
 abbr hostedit sudo nvim /etc/hosts
+
+abbr notes nvim ~/Notes/(date "+%Y%m%d-%H%M%S").md
