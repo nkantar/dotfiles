@@ -100,6 +100,19 @@ nnoremap <Leader>fb :Telescope buffers<CR>
 nnoremap <Leader>fh :Telescope help_tags<CR>
 nnoremap <Leader>fc :Telescope git_commits<CR>
 
+"----------
+" nvim-treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  sync_install = false,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
 
 "==================================================
 " Keymappings
