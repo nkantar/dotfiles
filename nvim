@@ -47,6 +47,9 @@ Plug 'cespare/vim-toml'
 " BBCode
 Plug 'Winseven4lyf/vim-bbcode'
 
+" frontend
+Plug 'prettier/vim-prettier'
+
 call plug#end()
 
 
@@ -89,6 +92,10 @@ let g:gitgutter_map_keys = 0
 "----------
 " Plug
 nnoremap <Leader>pu :PlugUpdate<CR>
+
+"----------
+" Prettier
+nnoremap <Leader>pp :Prettier<CR>
 
 "----------
 " sneak
