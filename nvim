@@ -40,6 +40,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " Python
 Plug 'psf/black'
+Plug 'fisadev/vim-isort'
 
 " file types
 Plug 'cespare/vim-toml'
@@ -82,6 +83,11 @@ nnoremap <Leader>ft :FloatermNew<CR>
 " gitgutter
 
 let g:gitgutter_map_keys = 0
+
+"----------
+" isort
+nnoremap <Leader>is :Isort<CR>
+let g:vim_isort_config_overrides = {'profile': 'black'}
 
 "----------
 " Plug
