@@ -16,6 +16,7 @@ SETUVAR _fish_abbr_lg:lazygit
 SETUVAR _fish_abbr_ll:ls\x20\x2dl
 SETUVAR _fish_abbr_ls:exa
 SETUVAR _fish_abbr_lt:exa\x20\x2dlas\x20modified
+SETUVAR _fish_abbr_notes:nvim\x20/Users/nik/Notes/20220209\x2d085937\x2emd
 SETUVAR _fish_abbr_nv:nvim
 SETUVAR _fish_abbr_p:python
 SETUVAR _fish_abbr_p3:python3
