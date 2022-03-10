@@ -341,6 +341,10 @@ set statusline+=[%{fugitive#head()}]        " Git branch
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " ----------
+" Hurl
+au BufRead,BufNewFile *.hurl  set filetype=http
+
+" ----------
 " Python
 
 function! HighlightPythonDocstringsAsComments()
