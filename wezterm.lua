@@ -5,7 +5,7 @@ return {
 
   font = wezterm.font("Rec Mono Duotone"),
   font_size = 16,
-  line_height = 1.0,
+  line_height = 1.25,
 
   color_scheme = "OneHalfDark",
   use_fancy_tab_bar = false,
