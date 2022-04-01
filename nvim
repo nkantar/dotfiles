@@ -51,6 +51,8 @@ Plug 'Winseven4lyf/vim-bbcode'
 " frontend
 Plug 'prettier/vim-prettier'
 
+Plug 'fladson/vim-kitty'
+
 call plug#end()
 
 
