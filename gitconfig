@@ -59,5 +59,7 @@
     whatsnew = diff HEAD..origin/main
     wn = whatsnew
 
+    brt = branch --sort=-committerdate --format="%(committerdate:relative)%09%(refname:short)"
+
 [init]
 	defaultBranch = main
