@@ -41,6 +41,8 @@ map -docstring "command palette" global normal \; ":"
 
 # space is our fearless leader
 map -docstring "leader" global normal <space> ,
+map global normal <backspace> <space> -docstring "remove all sels except main"
+map global normal <a-backspace> <a-space> -docstring "remove main sel"
 
 map -docstring "save" global user w ":write<ret>"
 map -docstring "quit" global user q ":quit<ret>"
@@ -50,6 +52,8 @@ map -docstring "save and quit" global user x ":write; quit<ret>"
 #map -docstring "ctrl-c to esc" global insert <c-c> "exec <esc>"
 
 # missing mappings
+map -docstring "yank the selection into the clipboard" global user y "<a-|> pbcopy<ret>"
+map -docstring "paste the clipboard" global user p "<a-!> pbpaste<ret>"
 # f -> format
 # z -> fzf
 # ? -> mdut
