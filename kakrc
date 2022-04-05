@@ -13,8 +13,11 @@ plug "andreyorst/plug.kak" noload
 
 # other plugins
 plug "raiguard/one.kak" theme
+plug "andreyorst/fzf.kak"
 
 set-option global autoreload yes
+
+map global normal <c-p> ": fzf-mode<ret>"
 
 
 #########################
