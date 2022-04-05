@@ -9,4 +9,4 @@ starship init fish | source
 # Created by `pipx` on 2021-12-15 08:09:28
 set PATH $PATH /Users/nik/.local/bin
 
-set EDITOR /opt/homebrew/bin/kak
+set EDITOR (which kak)
