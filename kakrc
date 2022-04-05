@@ -14,6 +14,8 @@ plug "andreyorst/plug.kak" noload
 # other plugins
 plug "raiguard/one.kak" theme
 
+set-option global autoreload yes
+
 
 #########################
 
