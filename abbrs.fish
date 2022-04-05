@@ -11,6 +11,7 @@ abbr p3 python3
 abbr p python
 abbr v vim
 abbr nv nvim
+abbr k kak
 abbr lg lazygit
 
 abbr br broot
