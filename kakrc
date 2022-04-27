@@ -13,11 +13,17 @@ plug "andreyorst/plug.kak" noload
 
 # other plugins
 plug "raiguard/one.kak" theme
-plug "andreyorst/fzf.kak"
+plug "andreyorst/fzf.kak" config %{
+} defer fzf %{
+    set-option global fzf_file_command "rg"
+} config %{
+}
+
 
 set-option global autoreload yes
 
 map global normal <c-p> ": fzf-mode<ret>"
+
 
 
 #########################
@@ -59,6 +65,10 @@ map -docstring "save and quit" global user x ":write; quit<ret>"
 # missing mappings
 map -docstring "yank the selection into the clipboard" global user y "<a-|> pbcopy<ret>"
 map -docstring "paste the clipboard" global user p "<a-!> pbpaste<ret>"
-# f -> format
+map -docstring "format" global user f ":format<ret>"
 # z -> fzf
 # ? -> mdut
+
+hook global WinSetOption filetype=python %{
+    set-option window formatcmd "black -q -"
+}
