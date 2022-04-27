@@ -14,8 +14,14 @@ abbr nv nvim
 abbr k kak
 abbr lg lazygit
 
+abbr e $EDITOR
+
 abbr br broot
+
+abbr ac $EDITOR ~/.aws/credentials
 
 abbr hostedit sudo $EDITOR /etc/hosts
 
 abbr notes $EDITOR ~/Notes/(date "+%Y%m%d-%H%M%S").md
+
+abbr bsrs brew services restart supervisor
