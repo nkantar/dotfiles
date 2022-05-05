@@ -35,6 +35,11 @@ colorscheme one-darker
 set-option global tabstop 4
 set-option global indentwidth 4
 
+hook global WinSetOption filetype=go %{
+    set-option window tabstop 8
+    set-option window indentwidth 8
+}
+
 set-option global scrolloff 5,10
 
 # highlight trailing whitespace
