@@ -35,7 +35,7 @@ colorscheme one-darker
 set-option global tabstop 4
 set-option global indentwidth 4
 
-set-option global scrolloff 15,10
+set-option global scrolloff 5,10
 
 # highlight trailing whitespace
 add-highlighter global/ regex \h+$ 0:Error
