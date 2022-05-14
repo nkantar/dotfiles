@@ -16,6 +16,8 @@ abbr lg lazygit
 
 abbr e $EDITOR
 
+abbr kc kak -c (pgrep kak)
+
 abbr br broot
 
 abbr ac $EDITOR ~/.aws/credentials
