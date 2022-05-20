@@ -77,5 +77,5 @@ map -docstring "format" global user f ":format<ret>"
 hook global WinSetOption filetype=python %{
     set-option window formatcmd "black -q -"
 }
-
-set-face global comment "+i"
+set-face global comment "rgb:eeeeee+i"
+set-face global documentation "rgb:eeeeee+i"
