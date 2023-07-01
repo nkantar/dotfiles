@@ -56,7 +56,7 @@ add-highlighter global/ number-lines -hlcursor
 map -docstring "command palette" global normal \; ":"
 
 # space is our fearless leader
-map -docstring "leader" global normal <space> ,
+#map -docstring "leader" global normal <space> ,
 map global normal <backspace> <space> -docstring "remove all sels except main"
 map global normal <a-backspace> <a-space> -docstring "remove main sel"
 
