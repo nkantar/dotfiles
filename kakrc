@@ -74,6 +74,8 @@ map -docstring "format" global user f ":format<ret>"
 # z -> fzf
 # ? -> mdut
 
+map -docstring "select multiple lines" global normal X T<ret>Lx
+
 hook global WinSetOption filetype=python %{
     set-option window formatcmd "black -q -"
 }
