@@ -79,5 +79,11 @@ map -docstring "select multiple lines" global normal X T<ret>Lx
 hook global WinSetOption filetype=python %{
     set-option window formatcmd "black -q -"
 }
+hook global WinSetOption filetype=html %{
+    set-option window formatcmd "prettier -"
+}
+
+
+
 set-face global comment "rgb:eeeeee+i"
 set-face global documentation "rgb:eeeeee+i"
