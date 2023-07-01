@@ -1,0 +1,9 @@
+theme = "onedark"
+
+[editor]
+scrolloff = 15
+# line-number = "relative"
+cursorline = true
+cursorcolumn = true
+# rulers = [57,72,100]
+bufferline = "multiple"
