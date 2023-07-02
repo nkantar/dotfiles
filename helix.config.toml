@@ -6,4 +6,4 @@ scrolloff = 15
 cursorline = true
 cursorcolumn = true
 # rulers = [57,72,100]
-bufferline = "multiple"
+# bufferline = "multiple"
