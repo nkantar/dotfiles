@@ -24,6 +24,6 @@ abbr ac $EDITOR ~/.aws/credentials
 
 abbr hostedit sudo $EDITOR /etc/hosts
 
-abbr notes $EDITOR ~/Notes/(date "+%Y%m%d-%H%M%S").md
+abbr notes $EDITOR ~/Notes/(date "+%Y%m%d_%H%M%S").md
 
 abbr bsrs brew services restart supervisor
