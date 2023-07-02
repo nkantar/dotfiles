@@ -17,6 +17,8 @@
 [pull]
     rebase = false
 [alias]
+    alias = !git config -l | rg alias | cut -c 7-
+
     a = add
     ci = commit
     co = checkout
