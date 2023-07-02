@@ -7,3 +7,6 @@ cursorline = true
 cursorcolumn = true
 # rulers = [57,72,100]
 # bufferline = "multiple"
+
+[editor.soft-wrap]
+enable = true
