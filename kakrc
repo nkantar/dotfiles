@@ -56,7 +56,7 @@ add-highlighter global/ number-lines -hlcursor
 map -docstring "command palette" global normal \; ":"
 
 # space is our fearless leader
-map -docstring "leader" global normal <space> ,
+#map -docstring "leader" global normal <space> ,
 map global normal <backspace> <space> -docstring "remove all sels except main"
 map global normal <a-backspace> <a-space> -docstring "remove main sel"
 
@@ -74,8 +74,16 @@ map -docstring "format" global user f ":format<ret>"
 # z -> fzf
 # ? -> mdut
 
+map -docstring "select multiple lines" global normal X T<ret>Lx
+
 hook global WinSetOption filetype=python %{
     set-option window formatcmd "black -q -"
 }
+hook global WinSetOption filetype=html %{
+    set-option window formatcmd "prettier -"
+}
+
+
+
 set-face global comment "rgb:eeeeee+i"
 set-face global documentation "rgb:eeeeee+i"

@@ -12,3 +12,7 @@ starship init fish | source
 set PATH $PATH /Users/nik/.local/bin
 
 set EDITOR (which kak)
+
+set DOTFILES ~/.dotfiles
+
+set XDG_CONFIG_HOME "$HOME/.config"

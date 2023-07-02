@@ -20,6 +20,8 @@ abbr kc kak -c (pgrep kak)
 
 abbr br broot
 
+alias dotup="cd $DOTFILES && git pull && prevd"
+
 abbr ac $EDITOR ~/.aws/credentials
 
 abbr hostedit sudo $EDITOR /etc/hosts
