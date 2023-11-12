@@ -10,3 +10,6 @@ cursorcolumn = true
 
 [editor.soft-wrap]
 enable = true
+
+[keys.normal.space]
+"n" = { "w" = ":w" } # Writes file
