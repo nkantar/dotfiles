@@ -16,3 +16,5 @@ set EDITOR (which hx)
 set DOTFILES ~/.dotfiles
 
 set XDG_CONFIG_HOME "$HOME/.config"
+
+eval "$(atuin init fish)"

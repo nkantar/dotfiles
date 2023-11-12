@@ -1,5 +1,5 @@
-abbr l exa -las name
-abbr lt exa -las modified
+abbr l eza -las name
+abbr lt eza -las modified
 
 abbr rgp rg -t py
 abbr rgh rg -t html
@@ -29,3 +29,6 @@ abbr hostedit sudo $EDITOR /etc/hosts
 abbr notes $EDITOR ~/Notes/(date "+%Y%m%d_%H%M%S").md
 
 abbr bsrs brew services restart supervisor
+
+abbr jsut just
+abbr j just
