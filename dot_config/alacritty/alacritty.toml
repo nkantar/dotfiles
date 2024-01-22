@@ -1,0 +1,28 @@
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 16.0
+
+[font.bold]
+family = "Rec Mono Duotone"
+
+[font.bold_italic]
+family = "Rec Mono Duotone"
+
+[font.italic]
+family = "Rec Mono Duotone"
+
+[font.normal]
+family = "Rec Mono Duotone"
+
+[window]
+dynamic_title = true
+
+[window.dimensions]
+columns = 120
+lines = 36
+
+[window.padding]
+x = 5
+y = 5
