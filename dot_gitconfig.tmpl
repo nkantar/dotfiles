@@ -1,15 +1,8 @@
 [user]
     name = Nik Kantar
-;in ~/.gitconfig-local
-;[user]
-    ;email = blah@example.com
-;in ~/.gitconfig-local
-;[github]
-    ;user = nkantar
-; [core]
-    ;pager = diff-so-fancy | less --tabs=4 -RFX
-[include]
-    path = ~/.gitconfig-local
+    email = {{ .git_email }}
+[github]
+    user = {{ .git_user }}
 [color]
     ui = true
 [push]
@@ -64,4 +57,4 @@
     brt = branch --sort=-committerdate --format="%(committerdate:relative)%09%(refname:short)"
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
