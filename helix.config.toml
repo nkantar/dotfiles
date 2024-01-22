@@ -2,7 +2,7 @@ theme = "onedark"
 
 [editor]
 scrolloff = 10
-# line-number = "relative"
+line-number = "relative"
 cursorline = true
 cursorcolumn = true
 # rulers = [57,72,100]
