@@ -1,4 +1,4 @@
-source ~/.env_vars.sh
+# source ~/.env_vars.sh
 
 set -U fish_greeting
 
