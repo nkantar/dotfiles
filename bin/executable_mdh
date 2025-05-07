@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Output current date in Markdown header format used for notes.
+# The format is yy.[m]m.[d]d, e.g.,
+#     ## 25.4.11
+
+echo "## `date '+%y.%-m.%-d'`"
