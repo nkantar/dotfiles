@@ -3,6 +3,11 @@
 set PATH $PATH /opt/homebrew/bin
 set PATH $PATH ~/bin
 
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+
+pyenv init - | source
+
 set -Ux EDITOR (which hx)
 
 set -U fish_greeting
