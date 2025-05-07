@@ -23,6 +23,6 @@ set PATH $PATH /Users/nik/.local/bin
 
 set DOTFILES ~/.dotfiles
 
-set XDG_CONFIG_HOME "$HOME/.config"
+set -Ux XDG_CONFIG_HOME "$HOME/.config"
 
 eval "$(atuin init fish)"
