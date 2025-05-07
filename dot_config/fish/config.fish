@@ -1,5 +1,15 @@
 # source ~/.env_vars.sh
 
+set PATH $PATH /opt/homebrew/bin
+set PATH $PATH ~/bin
+
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+
+pyenv init - | source
+
+set -Ux EDITOR (which hx)
+
 set -U fish_greeting
 
 if status is-interactive
@@ -11,10 +21,8 @@ starship init fish | source
 # Created by `pipx` on 2021-12-15 08:09:28
 set PATH $PATH /Users/nik/.local/bin
 
-set EDITOR (which hx)
-
 set DOTFILES ~/.dotfiles
 
-set XDG_CONFIG_HOME "$HOME/.config"
+set -Ux XDG_CONFIG_HOME "$HOME/.config"
 
 eval "$(atuin init fish)"

@@ -9,9 +9,6 @@ abbr dcmp docker-compose
 abbr g git
 abbr p3 python3
 abbr p python
-abbr v vim
-abbr nv nvim
-abbr k kak
 abbr lg lazygit
 
 abbr e $EDITOR
@@ -19,8 +16,6 @@ abbr e $EDITOR
 abbr kc kak -c (pgrep kak)
 
 abbr br broot
-
-alias dotup="cd $DOTFILES && git pull && prevd"
 
 abbr ac $EDITOR ~/.aws/credentials
 
