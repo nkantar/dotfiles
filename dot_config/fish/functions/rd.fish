@@ -5,7 +5,9 @@ function rd --description "Source Reach monorepo venv and change dir to project"
     set -l activate_venv venv/bin/activate.fish
 
     cd $repo_root
-    tmux rename-window reach_security
+    if set -q TMUX_PANE
+        tmux rename-window reach_security
+    end
     source $activate_venv
 
     if not test -n "$argv"
@@ -14,7 +16,9 @@ function rd --description "Source Reach monorepo venv and change dir to project"
     end
 
     cd $project_path
-    tmux rename-window $project
+    if set -q TMUX_PANE
+        tmux rename-window $project
+    end
 
     echo "Changed directory to $project."
 end
