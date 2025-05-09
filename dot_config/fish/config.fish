@@ -26,3 +26,5 @@ set DOTFILES ~/.dotfiles
 set -Ux XDG_CONFIG_HOME "$HOME/.config"
 
 eval "$(atuin init fish)"
+
+source ~/src/reach_security/venv/bin/activate.fish
