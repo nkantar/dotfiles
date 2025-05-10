@@ -1,3 +1,8 @@
 LICENSE
 README.md
 misc
+
+{{- if ne .chezmoi.hostname "reachnik" }}
+# ideally this shouldn't be global, but couldn't make it work otherwise ¯\_(ツ)_/¯
+**/*/rd.fish
+{{- end }}

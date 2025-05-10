@@ -1,0 +1,20 @@
+[[language]]
+name = "python"
+auto-format = true
+{{- if eq .chezmoi.hostname "reachnik" }}
+formatter = { command = "black", args = ["-"] }
+{{- end }}
+{{- if eq .chezmoi.hostname "nikbook" }}
+formatter = { command = "ruff", args = ["format", "-"] }
+language-servers = [
+  { name = "ruff", only-features = [ "diagnostics" ] },
+  { name = "pylsp" },
+]
+
+[language-server.ruff]
+command = "ruff"
+args = [ "server", "--preview" ]
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+{{- end }}
