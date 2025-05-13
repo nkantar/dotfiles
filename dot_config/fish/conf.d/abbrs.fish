@@ -27,3 +27,5 @@ abbr bsrs brew services restart supervisor
 
 abbr jsut just
 abbr j just
+
+abbr ux uv run hx
