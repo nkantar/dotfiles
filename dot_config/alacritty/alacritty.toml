@@ -17,7 +17,7 @@ dynamic_title = true
 size = 16.0
 
 [font.offset]
-y = 7
+y = 0
 
 [font.bold]
 family = "Rec Mono Duotone"
