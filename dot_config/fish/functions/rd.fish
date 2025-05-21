@@ -11,14 +11,18 @@ function rd --description "Source Reach monorepo venv and change dir to project"
     end
     source $activate_venv
 
-    if not test -n "$argv"
+    if not test -n "$argv[1]"
         echo "No project specified, changed directory to repo root."
         return 1
     end
 
     cd $project_path
     if set -q TMUX_PANE
-        tmux rename-window "$project: $tab_name"
+        tmux rename-window $project
+
+        if test -n "$argv[2]"
+            tmux rename-window "$project: $tab_name"
+        end
     end
 
     echo "Changed directory to $project."
