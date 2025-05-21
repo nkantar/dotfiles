@@ -3,7 +3,7 @@ function rd --description "Source Reach monorepo venv and change dir to project"
     set -l project $argv[1]
     set -l project_path $repo_root/$project
     set -l activate_venv venv/bin/activate.fish
-    set -l tab_name $argv[2]
+    set -l tab_name $argv[2..-1]
 
     cd $repo_root
     if set -q TMUX_PANE
