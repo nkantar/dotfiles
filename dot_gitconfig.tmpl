@@ -3,6 +3,15 @@
     email = {{ .git_email }}
 [github]
     user = {{ .git_user }}
+[core]
+    pager = delta
+[interactive]
+    difffilter = delta --color-only
+[delta]
+    navigate = true
+    dark = true
+[merge]
+    conflictstyle = zdiff3
 [color]
     ui = true
 [push]
