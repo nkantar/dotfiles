@@ -29,3 +29,5 @@ abbr jsut just
 abbr j just
 
 abbr ux uv run hx
+
+abbr cm chezmoi
