@@ -26,6 +26,8 @@ eval "$(atuin init fish)"
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
+set -Ux AWS_REGION "us-west-2"
+
 pyenv init - | source
 
 source ~/src/reach_security/venv/bin/activate.fish
