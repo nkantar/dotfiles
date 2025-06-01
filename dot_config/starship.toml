@@ -3,6 +3,9 @@
 [character]
 success_symbol = "[➜](bold green)"
 
+[hostname]
+ssh_only = false
+
 [package]
 disabled = true
 
