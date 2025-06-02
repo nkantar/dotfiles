@@ -1,7 +1,7 @@
-# source ~/.env_vars.sh
-
 set PATH $PATH /opt/homebrew/bin
 set PATH $PATH ~/bin
+set PATH $PATH ~/.cargo/bin
+set PATH $PATH ~/go/bin
 
 set -Ux EDITOR (which hx)
 
@@ -13,10 +13,6 @@ end
 
 starship init fish | source
 
-# Created by `pipx` on 2021-12-15 08:09:28
-set PATH $PATH /Users/nik/.local/bin
-
-set PATH $PATH /Users/nik/.cargo/bin
 
 set DOTFILES ~/.dotfiles
 
