@@ -4,7 +4,7 @@ auto-format = true
 {{- if eq .chezmoi.hostname "reachnik" }}
 formatter = { command = "black", args = ["-"] }
 {{- end }}
-{{- if eq .chezmoi.hostname "nikbook" }}
+{{- if ne .chezmoi.hostname "reachnik" }}
 formatter = { command = "ruff", args = ["format", "-"] }
 language-servers = [
   { name = "ruff", only-features = [ "diagnostics" ] },
