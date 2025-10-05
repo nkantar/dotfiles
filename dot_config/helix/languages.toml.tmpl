@@ -3,23 +3,34 @@ name = "python"
 auto-format = true
 {{- if eq .chezmoi.hostname "reachnik" }}
 formatter = { command = "black", args = ["-"] }
+language-servers = [
+  { name = "pylsp" },
 {{- end }}
 {{- if ne .chezmoi.hostname "reachnik" }}
 formatter = { command = "ruff", args = ["format", "-"] }
 language-servers = [
   { name = "ruff", only-features = [ "diagnostics" ] },
-  { name = "pylsp" },
+  { name = "ty" },
 ]
 
 [language-server.ruff]
 command = "ruff"
 args = [ "server", "--preview" ]
 
+[language-server.ty]
+command = "ty"
+args = ["server"]
+
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
-# [[language]]
-# name = "json"
-# auto-format = true
-# formatter = { command = "prettier", args = ["-"] }
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "json"] }
+
+[[language]]
+name = "html"
+language-servers = [{ name = "superhtml", except-features = ["format"] }, "vscode-html-language-server"]
+auto-format = false
 {{- end }}
