@@ -31,3 +31,5 @@ abbr j just
 abbr ux uv run hx
 
 abbr cm chezmoi
+
+abbr tg tree --gitignore
