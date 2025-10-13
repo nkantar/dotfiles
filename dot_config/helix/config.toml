@@ -9,6 +9,8 @@ cursorcolumn = true
 # bufferline = "multiple"
 end-of-line-diagnostics = "hint"
 
+bufferline = "multiple"
+
 [editor.soft-wrap]
 enable = true
 
