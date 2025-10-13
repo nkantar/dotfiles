@@ -30,3 +30,6 @@ family = "Rec Mono Duotone"
 
 [font.normal]
 family = "Rec Mono Duotone"
+
+[keyboard]
+bindings = [ { key = "Return", mods = "Shift", chars = "\n" } ] 
