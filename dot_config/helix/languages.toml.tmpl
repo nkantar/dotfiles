@@ -5,6 +5,7 @@ auto-format = true
 formatter = { command = "black", args = ["-"] }
 language-servers = [
   { name = "pylsp" },
+]
 {{- end }}
 {{- if ne .chezmoi.hostname "reachnik" }}
 formatter = { command = "ruff", args = ["format", "-"] }
