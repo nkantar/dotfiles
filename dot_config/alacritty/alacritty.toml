@@ -20,16 +20,16 @@ size = 16.0
 y = 0
 
 [font.bold]
-family = "Rec Mono Duotone"
+family = "Input Mono"
 
 [font.bold_italic]
-family = "Rec Mono Duotone"
+family = "Input Mono"
 
 [font.italic]
-family = "Rec Mono Duotone"
+family = "Input Mono"
 
 [font.normal]
-family = "Rec Mono Duotone"
+family = "Input Mono"
 
 [keyboard]
 bindings = [ { key = "Return", mods = "Shift", chars = "\n" } ] 
