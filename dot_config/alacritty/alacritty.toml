@@ -20,16 +20,20 @@ size = 16.0
 y = 0
 
 [font.bold]
-family = "Input Mono"
+family = "Monaspace Argon"
+style = "Bold"
 
 [font.bold_italic]
-family = "Input Mono"
+family = "Monaspace Radon"
+style = "Bold Italic"
 
 [font.italic]
-family = "Input Mono"
+family = "Monaspace Radon"
+style = "Italic"
 
 [font.normal]
-family = "Input Mono"
+family = "Monaspace Argon"
+style = "Regular"
 
 [keyboard]
 bindings = [ { key = "Return", mods = "Shift", chars = "\n" } ] 
