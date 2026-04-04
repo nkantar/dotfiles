@@ -11,6 +11,8 @@ end-of-line-diagnostics = "hint"
 
 bufferline = "multiple"
 
+clipboard-provider = "pasteboard"
+
 [editor.soft-wrap]
 enable = true
 
