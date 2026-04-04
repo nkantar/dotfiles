@@ -1,13 +1,13 @@
 [[language]]
 name = "python"
 auto-format = true
-{{- if eq .chezmoi.hostname "reachnik" }}
+{{- if eq .chezmoi.hostname "reachbook" }}
 formatter = { command = "black", args = ["-"] }
 language-servers = [
   { name = "pylsp" },
 ]
 {{- end }}
-{{- if ne .chezmoi.hostname "reachnik" }}
+{{- if ne .chezmoi.hostname "reachbook" }}
 formatter = { command = "ruff", args = ["format", "-"] }
 language-servers = [
   { name = "ruff", only-features = [ "diagnostics" ] },
