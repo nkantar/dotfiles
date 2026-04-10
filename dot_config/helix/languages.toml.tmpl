@@ -6,6 +6,8 @@ formatter = { command = "black", args = ["-"] }
 language-servers = [
   { name = "pylsp" },
 ]
+[language-server.pylsp.config.pylsp.plugins.pycodestyle]
+maxLineLength=88
 {{- end }}
 {{- if ne .chezmoi.hostname "reachbook" }}
 formatter = { command = "ruff", args = ["format", "-"] }
