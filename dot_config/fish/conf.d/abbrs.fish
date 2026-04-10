@@ -33,3 +33,6 @@ abbr ux uv run hx
 abbr cm chezmoi
 
 abbr tg tree --gitignore
+
+abbr tm tmux
+abbr ut TMUX= tmux

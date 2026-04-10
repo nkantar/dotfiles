@@ -1,0 +1,4 @@
+font-size = 16
+font-family = Rec Mono Duotone
+
+keybind = ctrl+cmd+r=prompt_tab_title
