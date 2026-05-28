@@ -37,3 +37,5 @@ abbr tg tree --gitignore
 abbr tm tmux
 abbr ta tmux attach
 abbr ut TMUX= tmux
+
+abbr gl glow -w 150
