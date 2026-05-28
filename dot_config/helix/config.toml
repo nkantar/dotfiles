@@ -16,5 +16,6 @@ clipboard-provider = "pasteboard"
 [editor.soft-wrap]
 enable = true
 
-[keys.normal.space]
-"n" = { "w" = ":w" } # Writes file
+[keys.normal.space.n]
+"w" = ":w"
+"r" = ":reload-all"
