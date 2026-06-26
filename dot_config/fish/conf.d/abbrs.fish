@@ -10,6 +10,7 @@ abbr g git
 abbr p3 python3
 abbr p python
 abbr lg lazygit
+abbr lgw lazygit -w .
 
 abbr e $EDITOR
 
