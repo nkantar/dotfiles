@@ -1,8 +1,7 @@
 git:
-  pagers:
-    - pager: delta --dark --paging=never
+  diffRenderers:
+    - command: delta --paging=never
       colorArg: always
-
 customCommands:
   - key: "S"
     context: "localBranches"
