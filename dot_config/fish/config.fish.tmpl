@@ -4,8 +4,6 @@ set PATH $PATH ~/.cargo/bin
 set PATH $PATH ~/go/bin
 set PATH $PATH ~/.local/bin
 
-set -Ux EDITOR (which hx)
-
 set -U fish_greeting
 
 if status is-interactive
@@ -16,8 +14,6 @@ starship init fish | source
 
 
 set DOTFILES ~/.dotfiles
-
-set -Ux XDG_CONFIG_HOME "$HOME/.config"
 
 eval "$(atuin init fish)"
 
