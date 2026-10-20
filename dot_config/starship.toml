@@ -22,4 +22,4 @@ disabled = true
 truncation_length = 0
 
 [nodejs]
-disabled = true#
+disabled = true
