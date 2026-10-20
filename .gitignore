@@ -1,9 +1,1 @@
-vim/backup
-vim/black
-vim/plugged/
-vim/autoload/
-vim/Ditto/
 .DS_Store
-iterm2/
-gitconfig-local
-.netrwhist
