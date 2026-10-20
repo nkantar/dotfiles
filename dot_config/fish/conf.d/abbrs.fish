@@ -39,4 +39,4 @@ abbr tm tmux
 abbr ta tmux attach
 abbr ut TMUX= tmux
 
-abbr gl glow -w $COLUMNS
+abbr gl glow -aw $COLUMNS
