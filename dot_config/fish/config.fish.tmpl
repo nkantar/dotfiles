@@ -1,4 +1,6 @@
+{{ if eq .chezmoi.os "darwin" -}}
 set PATH $PATH /opt/homebrew/bin
+{{ end -}}
 set PATH $PATH ~/bin
 set PATH $PATH ~/.cargo/bin
 set PATH $PATH ~/go/bin
@@ -13,6 +15,12 @@ end
 starship init fish | source
 
 eval "$(atuin init fish)"
+
+{{- if eq .chezmoi.os "linux" }}
+
+# Debian installs bat as batcat
+abbr bat batcat
+{{- end }}
 
 {{- if eq .chezmoi.hostname "reachbook" }}
 set -Ux AWS_REGION "us-west-2"

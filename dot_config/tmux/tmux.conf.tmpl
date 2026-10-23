@@ -11,7 +11,11 @@ set-option -ag terminal-overrides ",$TERM:Tc"
 # ====================================================================
 
 # fish
+{{- if eq .chezmoi.os "darwin" }}
 set-option -g default-shell /opt/homebrew/bin/fish
+{{- else }}
+set-option -g default-shell /usr/bin/fish
+{{- end }}
 
 # ====================================================================
 # misc

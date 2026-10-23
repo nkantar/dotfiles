@@ -1,0 +1,9 @@
+Host *
+  IgnoreUnknown UseKeychain
+  UseKeychain yes
+  AddKeysToAgent yes
+{{- if eq .chezmoi.os "linux" }}
+  IdentityFile ~/.ssh/id_rsa
+{{- else }}
+  IdentityFile ~/.ssh/id_ed25519
+{{- end }}

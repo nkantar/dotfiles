@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# pbcopy shim for Linux (only installed on non-macOS)
+if [ -n "$WAYLAND_DISPLAY" ]; then
+    exec wl-copy
+else
+    exec xclip -selection clipboard
+fi

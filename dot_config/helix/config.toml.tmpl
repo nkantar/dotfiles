@@ -10,8 +10,10 @@ cursorcolumn = true
 end-of-line-diagnostics = "hint"
 
 bufferline = "multiple"
+{{- if eq .chezmoi.os "darwin" }}
 
 clipboard-provider = "pasteboard"
+{{- end }}
 
 [editor.soft-wrap]
 enable = true

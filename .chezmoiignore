@@ -5,3 +5,11 @@ README.md
 # ideally this shouldn't be global, but couldn't make it work otherwise ¯\_(ツ)_/¯
 **/*/rd.fish
 {{- end }}
+
+{{- if eq .chezmoi.os "darwin" }}
+bin/pbcopy
+{{- else }}
+bin/autoclean.py
+bin/micswitch.swift
+Library
+{{- end }}
