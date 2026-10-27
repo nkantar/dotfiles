@@ -1,6 +1,7 @@
 [[language]]
 name = "python"
 auto-format = true
+rulers = [89]
 {{- if eq .chezmoi.hostname "reachbook" }}
 formatter = { command = "black", args = ["-"] }
 language-servers = [
@@ -37,3 +38,7 @@ name = "html"
 language-servers = [{ name = "superhtml", except-features = ["format"] }, "vscode-html-language-server"]
 auto-format = false
 {{- end }}
+
+[[language]]
+name = "git-commit"
+rulers = [51, 73]
