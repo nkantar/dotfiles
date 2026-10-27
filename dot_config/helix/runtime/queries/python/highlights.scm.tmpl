@@ -1,0 +1,7 @@
+{{- $upstream := "/opt/homebrew/opt/helix/libexec/runtime/queries/python/highlights.scm" -}}
+{{- if stat $upstream -}}
+{{ include $upstream }}
+; A string that stands alone as a statement is a docstring, never a runtime value.
+; It must come after the upstream `(string) @string` rule, because the last match wins.
+(expression_statement (string) @comment.block.documentation)
+{{- end }}

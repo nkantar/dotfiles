@@ -1,0 +1,8 @@
+{{- $upstream := "/opt/homebrew/opt/helix/libexec/runtime/queries/python/injections.scm" -}}
+{{- if stat $upstream -}}
+; Give docstrings the comment grammar, so TODO-style tags show in bold.
+((expression_statement (string (string_content) @injection.content))
+ (#set! injection.language "comment"))
+
+{{ include $upstream }}
+{{- end }}
