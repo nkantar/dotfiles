@@ -113,3 +113,6 @@ set -g detach-on-destroy off
 set-hook -g session-created 'refresh-client -S'
 set-hook -g session-closed  'refresh-client -S'
 set-hook -g session-renamed 'refresh-client -S'
+
+# btsm: session picker with custom order (local plugin)
+run "~/.tmux/plugins/btsm/btsm.tmux"
