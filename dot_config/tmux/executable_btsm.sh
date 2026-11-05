@@ -2,12 +2,13 @@
 # Session picker with a custom order.
 # The order is in @btsm-order as session IDs ("$1 $4 $2").
 # Sessions not in the order go at the end. Dead IDs are skipped.
-# The third field is a marker column: a blue bar for the previous session (name in $BTSM_LAST), a space for others.
+# The third field is a marker column: a blue bar for the previous session (name in $BTSM_LAST),
+# a green bar for the current session (ID in $BTSM_CUR), a space for others.
 
 list() {
-    tmux ls -O index -F '#{session_id}	#{session_name}' | awk -F'\t' -v order="$(tmux show -gv @btsm-order 2>/dev/null)" -v last="$BTSM_LAST" '
+    tmux ls -O index -F '#{session_id}	#{session_name}' | awk -F'\t' -v order="$(tmux show -gv @btsm-order 2>/dev/null)" -v last="$BTSM_LAST" -v cur="$BTSM_CUR" '
         BEGIN { n = split(order, o, " ") }
-        { line[$1] = $0 "\t" ($2 == last ? "\033[34m▌\033[0m" : " "); ids[++m] = $1 }
+        { line[$1] = $0 "\t" ($2 == last ? "\033[34m▌\033[0m" : $1 == cur ? "\033[32m▌\033[0m" : " "); ids[++m] = $1 }
         END {
             for (i = 1; i <= n; i++) if ((o[i] in line) && !(o[i] in seen)) { print line[o[i]]; seen[o[i]] = 1 }
             for (i = 1; i <= m; i++) if (!(ids[i] in seen)) print line[ids[i]]
@@ -53,10 +54,11 @@ pick() {
     local self lines current up down
     self="'$0'"
     # ponytail: tmux tracks the previous session per client, so read it here and do not store it.
-    export BTSM_LAST
+    export BTSM_LAST BTSM_CUR
     BTSM_LAST=$(tmux display -p '#{client_last_session}')
+    BTSM_CUR=$(tmux display -p '#{session_id}')
     lines=$(list)
-    current=$(cut -f1 <<<"$lines" | grep -nxF "$(tmux display -p '#{session_id}')" | cut -d: -f1)
+    current=$(cut -f1 <<<"$lines" | grep -nxF "$BTSM_CUR" | cut -d: -f1)
     up="reload-sync($self move {1} -1)"
     down="reload-sync($self move {1} 1)"
     # ponytail: bash, not $SHELL, for fzf commands. fish starts about 6x slower.

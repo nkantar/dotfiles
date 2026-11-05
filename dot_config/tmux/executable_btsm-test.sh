@@ -32,6 +32,8 @@ t kill-session -t a
 check "$(names)" "z b d "
 
 check "$(t run-shell "BTSM_LAST=b '$S' list" | grep -c '▌')" "1"
+d=$(t display -p -t d '#{session_id}')
+check "$(t run-shell "BTSM_LAST=b BTSM_CUR='$d' '$S' list" | grep -c $'\e\\[32m▌')" "1"
 
 check "$(FZF_POS=5 FZF_MATCH_COUNT=12 "$S" page 10)" "pos(12)"
 check "$(FZF_POS=5 FZF_MATCH_COUNT=12 "$S" page -10)" "pos(1)"
